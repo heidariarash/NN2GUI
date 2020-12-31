@@ -32,6 +32,9 @@
       <pointsize>16</pointsize>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
     color: #F5F3F4;
@@ -104,6 +107,9 @@ QPushButton:hover {
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
     color: #F5F3F4;
@@ -124,6 +130,106 @@ QPushButton:hover {
      <iconset theme="upload">
       <normaloff>.</normaloff>.</iconset>
     </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>50</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Narrow</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	color: #F5F3F4;
+}</string>
+    </property>
+    <property name="text">
+     <string>Input Type</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="input_type">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>100</y>
+      <width>91</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Narrow</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QComboBox{
+	color: #F5F3F4;
+    border: 2px solid #E5383B;
+    border-radius: 15px;
+    background-color: #BA181B;
+    padding: 2px;
+	padding-left: 5px;
+}
+
+QComboBox::drop-down {
+	border: 0px
+}
+
+QComboBox::down-arrow {
+	width: 5px;
+	height: 5px;
+	image: url(:/gallery/arrow-down.png);
+}
+
+QComboBox QAbstractItemView {
+    border: 2px solid #E5383B;
+    selection-background-color: #A4161A;
+	background-color: #BA181B
+}</string>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QComboBox::AdjustToContents</enum>
+    </property>
+    <item>
+     <property name="text">
+      <string>Image</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Tabular</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Text</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Video</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3D Image</string>
+     </property>
+    </item>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
