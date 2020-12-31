@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>NN2GUI</class>
+ <widget class="QMainWindow" name="NN2GUI">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>NN2GUI</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(22, 26, 29);</string>
@@ -92,11 +92,11 @@ QPushButton:hover {
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="load_configure">
+   <widget class="QPushButton" name="load_preprocess">
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>579</y>
+      <y>590</y>
       <width>161</width>
       <height>41</height>
      </rect>
@@ -124,7 +124,7 @@ QPushButton:hover {
 }</string>
     </property>
     <property name="text">
-     <string>Load Configure File</string>
+     <string>Load Preprocess</string>
     </property>
     <property name="icon">
      <iconset theme="upload">
