@@ -10,6 +10,11 @@
     <height>703</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>NN2GUI</string>
   </property>
@@ -308,41 +313,6 @@ QComboBox QAbstractItemView {
      </property>
     </item>
    </widget>
-   <widget class="QPushButton" name="load_config">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>530</y>
-      <width>161</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial Narrow</family>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    color: #F5F3F4;
-    border: 2px solid #E5383B;
-    border-radius: 20px;
-    background-color: #BA181B;
-    padding: 5px;
-}
-
-QPushButton:hover {
-    background-color: #A4161A;
-}</string>
-    </property>
-    <property name="text">
-     <string>Load Configuration</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
@@ -492,7 +462,7 @@ QPushButton:hover {
      <string>Change</string>
     </property>
    </widget>
-   <widget class="QLabel" name="predictions">
+   <widget class="QLabel" name="predictions_info">
     <property name="geometry">
      <rect>
       <x>490</x>
@@ -532,7 +502,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>310</y>
+      <y>320</y>
       <width>121</width>
       <height>31</height>
      </rect>
@@ -553,6 +523,100 @@ QPushButton:hover {
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="load_input">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>370</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Narrow</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    color: #F5F3F4;
+    border: 2px solid #E5383B;
+    border-radius: 15px;
+    background-color: #BA181B;
+}
+
+QPushButton:hover {
+    background-color: #A4161A;
+}</string>
+    </property>
+    <property name="text">
+     <string>Load Image</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="input_input">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>410</y>
+      <width>221</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Narrow</family>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTextEdit {
+	border-radius: 15px;
+	border: 1px solid #E5383B;
+	padding: 5px;
+	color: #F5F3F4;
+}</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="predictions">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>510</y>
+      <width>511</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MV Boli</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	color: #F5F3F4;
+}</string>
+    </property>
+    <property name="text">
+     <string>Predictions</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
