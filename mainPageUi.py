@@ -11,23 +11,24 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class MainPageUi(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("NN2GUI")
-        MainWindow.resize(946, 703)
-        MainWindow.setStyleSheet("background-color: rgb(22, 26, 29);")
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.pushButton    = QtWidgets.QPushButton(self.centralwidget)
-        self.label         = QtWidgets.QLabel(self.centralwidget)
+class Ui_NN2GUI(object):
+    def setupUi(self, NN2GUI):
+        NN2GUI.setObjectName("NN2GUI")
+        NN2GUI.resize(946, 703)
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        NN2GUI.setFont(font)
+        NN2GUI.setStyleSheet("background-color: rgb(22, 26, 29);")
+        self.centralwidget = QtWidgets.QWidget(NN2GUI)
         self.centralwidget.setObjectName("centralwidget")
-        self.pushButton.setObjectName("pushButton")
-        self.pushButton.setGeometry(QtCore.QRect(370, 450, 200, 40))
-        self.label.setGeometry(QtCore.QRect(240, 120, 471, 201))
+        self.load_model = QtWidgets.QPushButton(self.centralwidget)
+        self.load_model.setGeometry(QtCore.QRect(540, 340, 200, 40))
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
-        font.setPointSize(14)
-        self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("QPushButton {\n"
+        font.setPointSize(16)
+        self.load_model.setFont(font)
+        self.load_model.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.load_model.setStyleSheet("QPushButton {\n"
 "    color: #F5F3F4;\n"
 "    border: 2px solid #E5383B;\n"
 "    border-radius: 20px;\n"
@@ -38,32 +39,329 @@ class MainPageUi(object):
 "QPushButton:hover {\n"
 "    background-color: #A4161A;\n"
 "}")
+        self.load_model.setObjectName("load_model")
+        self.model_info = QtWidgets.QLabel(self.centralwidget)
+        self.model_info.setGeometry(QtCore.QRect(400, 50, 471, 201))
         font = QtGui.QFont()
         font.setFamily("MV Boli")
         font.setPointSize(36)
+        self.model_info.setFont(font)
+        self.model_info.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.model_info.setTextFormat(QtCore.Qt.PlainText)
+        self.model_info.setScaledContents(False)
+        self.model_info.setAlignment(QtCore.Qt.AlignCenter)
+        self.model_info.setWordWrap(True)
+        self.model_info.setObjectName("model_info")
+        self.load_preprocess = QtWidgets.QPushButton(self.centralwidget)
+        self.load_preprocess.setGeometry(QtCore.QRect(90, 590, 161, 41))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(12)
+        self.load_preprocess.setFont(font)
+        self.load_preprocess.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.load_preprocess.setStyleSheet("QPushButton {\n"
+"    color: #F5F3F4;\n"
+"    border: 2px solid #E5383B;\n"
+"    border-radius: 20px;\n"
+"    background-color: #BA181B;\n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #A4161A;\n"
+"}")
+        self.load_preprocess.setObjectName("load_preprocess")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(30, 50, 121, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(14)
         self.label.setFont(font)
         self.label.setStyleSheet("QLabel {\n"
 "    color: #F5F3F4;\n"
 "}")
-        self.label.setTextFormat(QtCore.Qt.PlainText)
-        self.label.setScaledContents(False)
         self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setWordWrap(True)
         self.label.setObjectName("label")
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.input_type = QtWidgets.QComboBox(self.centralwidget)
+        self.input_type.setGeometry(QtCore.QRect(43, 100, 100, 30))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        self.input_type.setFont(font)
+        self.input_type.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.input_type.setStyleSheet("QComboBox{\n"
+"    color: #F5F3F4;\n"
+"    border: 2px solid #E5383B;\n"
+"    border-radius: 15px;\n"
+"    background-color: #BA181B;\n"
+"    padding: 2px;\n"
+"    padding-left: 5px;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"    border: 0px;\n"
+"    width: 0px;\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"    width: 5px;\n"
+"    height: 5px;\n"
+"    image: url(:/gallery/arrow-down.png);\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView {\n"
+"    border: 2px solid #E5383B;\n"
+"    selection-background-color: #A4161A;\n"
+"    color: #F5F3F4;\n"
+"    background-color: #BA181B;\n"
+"    border-radius: 5px;\n"
+"}")
+        self.input_type.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToMinimumContentsLengthWithIcon)
+        self.input_type.setObjectName("input_type")
+        self.input_type.addItem("")
+        self.input_type.addItem("")
+        self.input_type.addItem("")
+        self.input_type.addItem("")
+        self.input_type.addItem("")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(190, 50, 121, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(14)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setObjectName("label_2")
+        self.framework_type = QtWidgets.QComboBox(self.centralwidget)
+        self.framework_type.setGeometry(QtCore.QRect(203, 100, 100, 30))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        self.framework_type.setFont(font)
+        self.framework_type.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.framework_type.setStyleSheet("QComboBox{\n"
+"    color: #F5F3F4;\n"
+"    border: 2px solid #E5383B;\n"
+"    border-radius: 15px;\n"
+"    background-color: #BA181B;\n"
+"    padding: 2px;\n"
+"    padding-left: 4px\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"    border: 0px;\n"
+"    width: 0px;\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView {\n"
+"    border: 2px solid #E5383B;\n"
+"    selection-background-color: #A4161A;\n"
+"    color: #F5F3F4;\n"
+"    background-color: #BA181B;\n"
+"    border-radius: 5px;\n"
+"}")
+        self.framework_type.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContentsOnFirstShow)
+        self.framework_type.setObjectName("framework_type")
+        self.framework_type.addItem("")
+        self.framework_type.addItem("")
+        self.label_3 = QtWidgets.QLabel(self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(30, 160, 121, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(14)
+        self.label_3.setFont(font)
+        self.label_3.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_3.setObjectName("label_3")
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(190, 160, 121, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(14)
+        self.label_4.setFont(font)
+        self.label_4.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.label_4.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_4.setObjectName("label_4")
+        self.output_type = QtWidgets.QComboBox(self.centralwidget)
+        self.output_type.setGeometry(QtCore.QRect(43, 210, 100, 30))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        self.output_type.setFont(font)
+        self.output_type.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.output_type.setStyleSheet("QComboBox{\n"
+"    color: #F5F3F4;\n"
+"    border: 2px solid #E5383B;\n"
+"    border-radius: 15px;\n"
+"    background-color: #BA181B;\n"
+"    padding: 2px;\n"
+"    padding-left: 5px;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"    border: 0px;\n"
+"    width: 0px;\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"    width: 5px;\n"
+"    height: 5px;\n"
+"    image: url(:/gallery/arrow-down.png);\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView {\n"
+"    border: 2px solid #E5383B;\n"
+"    selection-background-color: #A4161A;\n"
+"    color: #F5F3F4;\n"
+"    background-color: #BA181B;\n"
+"    border-radius: 5px;\n"
+"}")
+        self.output_type.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToMinimumContentsLengthWithIcon)
+        self.output_type.setObjectName("output_type")
+        self.output_type.addItem("")
+        self.output_type.addItem("")
+        self.load_config_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.load_config_2.setGeometry(QtCore.QRect(203, 210, 100, 30))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        self.load_config_2.setFont(font)
+        self.load_config_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.load_config_2.setStyleSheet("QPushButton {\n"
+"    color: #F5F3F4;\n"
+"    border: 2px solid #E5383B;\n"
+"    border-radius: 15px;\n"
+"    background-color: #BA181B;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #A4161A;\n"
+"}")
+        self.load_config_2.setObjectName("load_config_2")
+        self.predictions_info = QtWidgets.QLabel(self.centralwidget)
+        self.predictions_info.setGeometry(QtCore.QRect(490, 440, 301, 51))
+        font = QtGui.QFont()
+        font.setFamily("MV Boli")
+        font.setPointSize(20)
+        self.predictions_info.setFont(font)
+        self.predictions_info.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.predictions_info.setTextFormat(QtCore.Qt.PlainText)
+        self.predictions_info.setScaledContents(False)
+        self.predictions_info.setAlignment(QtCore.Qt.AlignCenter)
+        self.predictions_info.setWordWrap(True)
+        self.predictions_info.setObjectName("predictions_info")
+        self.label_5 = QtWidgets.QLabel(self.centralwidget)
+        self.label_5.setGeometry(QtCore.QRect(110, 320, 121, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(14)
+        self.label_5.setFont(font)
+        self.label_5.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.label_5.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_5.setObjectName("label_5")
+        self.load_input = QtWidgets.QPushButton(self.centralwidget)
+        self.load_input.setGeometry(QtCore.QRect(120, 370, 100, 30))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        self.load_input.setFont(font)
+        self.load_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.load_input.setStyleSheet("QPushButton {\n"
+"    color: #F5F3F4;\n"
+"    border: 2px solid #E5383B;\n"
+"    border-radius: 15px;\n"
+"    background-color: #BA181B;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #A4161A;\n"
+"}")
+        self.load_input.setObjectName("load_input")
+        self.input_input = QtWidgets.QTextEdit(self.centralwidget)
+        self.input_input.setGeometry(QtCore.QRect(60, 410, 221, 61))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(8)
+        self.input_input.setFont(font)
+        self.input_input.setStyleSheet("QTextEdit {\n"
+"    border-radius: 15px;\n"
+"    border: 1px solid #E5383B;\n"
+"    padding: 5px;\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.input_input.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.input_input.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.input_input.setAcceptRichText(True)
+        self.input_input.setObjectName("input_input")
+        self.predictions = QtWidgets.QLabel(self.centralwidget)
+        self.predictions.setEnabled(True)
+        self.predictions.setGeometry(QtCore.QRect(380, 510, 511, 121))
+        font = QtGui.QFont()
+        font.setFamily("MV Boli")
+        font.setPointSize(12)
+        self.predictions.setFont(font)
+        self.predictions.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.predictions.setTextFormat(QtCore.Qt.PlainText)
+        self.predictions.setScaledContents(False)
+        self.predictions.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.predictions.setWordWrap(True)
+        self.predictions.setObjectName("predictions")
+        self.line = QtWidgets.QFrame(self.centralwidget)
+        self.line.setGeometry(QtCore.QRect(340, 30, 2, 621))
+        self.line.setStyleSheet("QFrame{\n"
+"    background-color: #E5383B;\n"
+"}")
+        self.line.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName("line")
+        NN2GUI.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(NN2GUI)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 946, 21))
         self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        NN2GUI.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(NN2GUI)
         self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+        NN2GUI.setStatusBar(self.statusbar)
 
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.retranslateUi(NN2GUI)
+        QtCore.QMetaObject.connectSlotsByName(NN2GUI)
 
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, NN2GUI):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton.setText(_translate("MainWindow", "Upload Model"))
-        self.label.setText(_translate("MainWindow", "Waiting passionately for a model!"))
+        NN2GUI.setWindowTitle(_translate("NN2GUI", "NN2GUI"))
+        self.load_model.setText(_translate("NN2GUI", "Load Model"))
+        self.model_info.setText(_translate("NN2GUI", "Waiting passionately for a model!"))
+        self.load_preprocess.setText(_translate("NN2GUI", "Load Preprocess"))
+        self.label.setText(_translate("NN2GUI", "Input Type"))
+        self.input_type.setItemText(0, _translate("NN2GUI", "Image"))
+        self.input_type.setItemText(1, _translate("NN2GUI", "Tabular"))
+        self.input_type.setItemText(2, _translate("NN2GUI", "Text"))
+        self.input_type.setItemText(3, _translate("NN2GUI", "Video"))
+        self.input_type.setItemText(4, _translate("NN2GUI", "3D Image"))
+        self.label_2.setText(_translate("NN2GUI", "Framework"))
+        self.framework_type.setItemText(0, _translate("NN2GUI", "TensorFlow"))
+        self.framework_type.setItemText(1, _translate("NN2GUI", "PyTorch"))
+        self.label_3.setText(_translate("NN2GUI", "Output Type"))
+        self.label_4.setText(_translate("NN2GUI", "Output Classes"))
+        self.output_type.setItemText(0, _translate("NN2GUI", "Classification"))
+        self.output_type.setItemText(1, _translate("NN2GUI", "Regression"))
+        self.load_config_2.setText(_translate("NN2GUI", "Change"))
+        self.predictions_info.setText(_translate("NN2GUI", "Predictions"))
+        self.label_5.setText(_translate("NN2GUI", "Input"))
+        self.load_input.setText(_translate("NN2GUI", "Load File"))
+        self.input_input.setPlaceholderText(_translate("NN2GUI", "Type Your Input Here ..."))
+        self.predictions.setText(_translate("NN2GUI", "Predictions"))
