@@ -96,7 +96,7 @@ QPushButton:hover {
    <widget class="QPushButton" name="load_preprocess">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>90</x>
       <y>590</y>
       <width>161</width>
       <height>41</height>
@@ -131,7 +131,7 @@ QPushButton:hover {
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>30</x>
       <y>50</y>
       <width>121</width>
       <height>31</height>
@@ -158,7 +158,7 @@ QPushButton:hover {
    <widget class="QComboBox" name="input_type">
     <property name="geometry">
      <rect>
-      <x>65</x>
+      <x>43</x>
       <y>100</y>
       <width>100</width>
       <height>30</height>
@@ -234,7 +234,7 @@ QComboBox QAbstractItemView {
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>190</x>
       <y>50</y>
       <width>121</width>
       <height>31</height>
@@ -261,7 +261,7 @@ QComboBox QAbstractItemView {
    <widget class="QComboBox" name="framework_type">
     <property name="geometry">
      <rect>
-      <x>223</x>
+      <x>203</x>
       <y>100</y>
       <width>100</width>
       <height>30</height>
@@ -316,7 +316,7 @@ QComboBox QAbstractItemView {
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>30</x>
       <y>160</y>
       <width>121</width>
       <height>31</height>
@@ -343,7 +343,7 @@ QComboBox QAbstractItemView {
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>190</x>
       <y>160</y>
       <width>121</width>
       <height>31</height>
@@ -370,7 +370,7 @@ QComboBox QAbstractItemView {
    <widget class="QComboBox" name="output_type">
     <property name="geometry">
      <rect>
-      <x>65</x>
+      <x>43</x>
       <y>210</y>
       <width>100</width>
       <height>30</height>
@@ -431,7 +431,7 @@ QComboBox QAbstractItemView {
    <widget class="QPushButton" name="load_config_2">
     <property name="geometry">
      <rect>
-      <x>223</x>
+      <x>203</x>
       <y>210</y>
       <width>100</width>
       <height>30</height>
@@ -501,7 +501,7 @@ QPushButton:hover {
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>110</x>
       <y>320</y>
       <width>121</width>
       <height>31</height>
@@ -528,7 +528,7 @@ QPushButton:hover {
    <widget class="QPushButton" name="load_input">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>120</x>
       <y>370</y>
       <width>100</width>
       <height>30</height>
@@ -556,13 +556,13 @@ QPushButton:hover {
 }</string>
     </property>
     <property name="text">
-     <string>Load Image</string>
+     <string>Load File</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="input_input">
     <property name="geometry">
      <rect>
-      <x>80</x>
+      <x>60</x>
       <y>410</y>
       <width>221</width>
       <height>61</height>
@@ -596,6 +596,9 @@ QPushButton:hover {
     </property>
    </widget>
    <widget class="QLabel" name="predictions">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>380</x>
@@ -629,6 +632,24 @@ QPushButton:hover {
     </property>
     <property name="wordWrap">
      <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>30</y>
+      <width>2</width>
+      <height>621</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame{
+	background-color: #E5383B;
+}</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
     </property>
    </widget>
   </widget>
