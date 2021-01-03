@@ -15,6 +15,15 @@ class MainWindow(QMainWindow):
         self.ui.predictions_info.setHidden(True)
         self.ui.predictions.setHidden(True)
         self.ui.input_input.setHidden(True)
+        self.ui.output_type.currentTextChanged.connect(self.output_type_change)
+
+    def output_type_change(self, value):
+        if(value == "Regression"):
+            self.ui.output_classes.setHidden(True)
+            self.ui.output_classes_label.setHidden(True)
+        else:
+            self.ui.output_classes_label.setHidden(False)
+            self.ui.output_classes.setHidden(False)
 
 
 if __name__ == "__main__":

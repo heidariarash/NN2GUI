@@ -179,17 +179,17 @@ class Ui_NN2GUI(object):
 "}")
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
-        self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(190, 160, 121, 31))
+        self.output_classes_label = QtWidgets.QLabel(self.centralwidget)
+        self.output_classes_label.setGeometry(QtCore.QRect(190, 160, 121, 31))
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
         font.setPointSize(14)
-        self.label_4.setFont(font)
-        self.label_4.setStyleSheet("QLabel {\n"
+        self.output_classes_label.setFont(font)
+        self.output_classes_label.setStyleSheet("QLabel {\n"
 "    color: #F5F3F4;\n"
 "}")
-        self.label_4.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_4.setObjectName("label_4")
+        self.output_classes_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.output_classes_label.setObjectName("output_classes_label")
         self.output_type = QtWidgets.QComboBox(self.centralwidget)
         self.output_type.setGeometry(QtCore.QRect(43, 210, 100, 30))
         font = QtGui.QFont()
@@ -228,14 +228,14 @@ class Ui_NN2GUI(object):
         self.output_type.setObjectName("output_type")
         self.output_type.addItem("")
         self.output_type.addItem("")
-        self.load_config_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.load_config_2.setGeometry(QtCore.QRect(203, 210, 100, 30))
+        self.output_classes = QtWidgets.QPushButton(self.centralwidget)
+        self.output_classes.setGeometry(QtCore.QRect(203, 210, 100, 30))
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
         font.setPointSize(11)
-        self.load_config_2.setFont(font)
-        self.load_config_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.load_config_2.setStyleSheet("QPushButton {\n"
+        self.output_classes.setFont(font)
+        self.output_classes.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.output_classes.setStyleSheet("QPushButton {\n"
 "    color: #F5F3F4;\n"
 "    border: 2px solid #E5383B;\n"
 "    border-radius: 15px;\n"
@@ -245,7 +245,7 @@ class Ui_NN2GUI(object):
 "QPushButton:hover {\n"
 "    background-color: #A4161A;\n"
 "}")
-        self.load_config_2.setObjectName("load_config_2")
+        self.output_classes.setObjectName("output_classes")
         self.predictions_info = QtWidgets.QLabel(self.centralwidget)
         self.predictions_info.setGeometry(QtCore.QRect(490, 440, 301, 51))
         font = QtGui.QFont()
@@ -356,10 +356,10 @@ class Ui_NN2GUI(object):
         self.framework_type.setItemText(0, _translate("NN2GUI", "TensorFlow"))
         self.framework_type.setItemText(1, _translate("NN2GUI", "PyTorch"))
         self.label_3.setText(_translate("NN2GUI", "Output Type"))
-        self.label_4.setText(_translate("NN2GUI", "Output Classes"))
+        self.output_classes_label.setText(_translate("NN2GUI", "Output Classes"))
         self.output_type.setItemText(0, _translate("NN2GUI", "Classification"))
         self.output_type.setItemText(1, _translate("NN2GUI", "Regression"))
-        self.load_config_2.setText(_translate("NN2GUI", "Change"))
+        self.output_classes.setText(_translate("NN2GUI", "Change"))
         self.predictions_info.setText(_translate("NN2GUI", "Predictions"))
         self.label_5.setText(_translate("NN2GUI", "Input"))
         self.load_input.setText(_translate("NN2GUI", "Load File"))
