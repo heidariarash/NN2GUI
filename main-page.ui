@@ -340,7 +340,7 @@ QComboBox QAbstractItemView {
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="output_classes_label">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -428,7 +428,7 @@ QComboBox QAbstractItemView {
      </property>
     </item>
    </widget>
-   <widget class="QPushButton" name="load_config_2">
+   <widget class="QPushButton" name="output_classes">
     <property name="geometry">
      <rect>
       <x>203</x>
