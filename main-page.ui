@@ -655,9 +655,9 @@ QPushButton:hover {
    <widget class="QLabel" name="load_preprocess_error">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>30</x>
       <y>630</y>
-      <width>221</width>
+      <width>281</width>
       <height>21</height>
      </rect>
     </property>

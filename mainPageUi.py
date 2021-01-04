@@ -329,7 +329,7 @@ class Ui_NN2GUI(object):
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
         self.load_preprocess_error = QtWidgets.QLabel(self.centralwidget)
-        self.load_preprocess_error.setGeometry(QtCore.QRect(60, 630, 221, 21))
+        self.load_preprocess_error.setGeometry(QtCore.QRect(30, 630, 281, 21))
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
         font.setPointSize(10)

@@ -18,6 +18,7 @@ class MainWindow(QMainWindow):
         self.ui.predictions_info.setHidden(True)
         self.ui.predictions.setHidden(True)
         self.ui.input_input.setHidden(True)
+        self.ui.load_preprocess_error.setHidden(True)
         #connecting different signals to slots
         self.ui.output_type.currentTextChanged.connect(self.output_type_change)
         self.ui.load_preprocess.clicked.connect(self.load_preprocess_clicked)
@@ -37,12 +38,14 @@ class MainWindow(QMainWindow):
             spec = importlib.util.spec_from_file_location("preprocess", fileName)
             self.preprocess = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(self.preprocess)
-            if "preprocess" in dir(self.preprocess):
-                print("ok")
+            if "preprocess" not in dir(self.preprocess):
+                self.ui.load_preprocess_error.setText("* The module does not contain preprocess function.")
+                self.ui.load_preprocess_error.setHidden(False)
             else:
-                print("nok")
+                self.ui.load_preprocess_error.setHidden(True)
         except:
-            print("error")
+            self.ui.load_preprocess_error.setText("* Something went wrong. Please try again.")
+            self.ui.load_preprocess_error.setHidden(False)
 
 
 if __name__ == "__main__":
