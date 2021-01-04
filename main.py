@@ -11,7 +11,8 @@ class MainWindow(QMainWindow):
         self.ui = Ui_NN2GUI()
         self.ui.setupUi(self)
         #initializing variables
-        self.valid_prep = False
+        self.valid_prep  = False
+        self.valid_model = False
         #correcting the stylesheets of comboboxes
         QtCore.QTimer.singleShot(100, lambda: self.ui.input_type.setStyleSheet(self.ui.input_type.styleSheet()))
         QtCore.QTimer.singleShot(100, lambda: self.ui.framework_type.setStyleSheet(self.ui.framework_type.styleSheet()))
@@ -21,6 +22,9 @@ class MainWindow(QMainWindow):
         self.ui.predictions.setHidden(True)
         self.ui.input_input.setHidden(True)
         self.ui.load_preprocess_error.setHidden(True)
+        #disabling some buttons and inputs
+        self.ui.input_input.setDisabled(True)
+        self.ui.load_input.setDisabled(True)
         #connecting different signals to slots
         self.ui.output_type.currentTextChanged.connect(self.output_type_change)
         self.ui.load_preprocess.clicked.connect(self.load_preprocess_clicked)

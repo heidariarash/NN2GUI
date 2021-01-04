@@ -32,7 +32,7 @@ class Ui_NN2GUI(object):
 "    color: #F5F3F4;\n"
 "    border: 2px solid #E5383B;\n"
 "    border-radius: 20px;\n"
-"    background-color: #BA181B;\n"
+"    background-color: #0B090A;\n"
 "    padding: 5px;\n"
 "}\n"
 "\n"
@@ -65,7 +65,7 @@ class Ui_NN2GUI(object):
 "    color: #F5F3F4;\n"
 "    border: 2px solid #E5383B;\n"
 "    border-radius: 20px;\n"
-"    background-color: #BA181B;\n"
+"    background-color: #0B090A;\n"
 "    padding: 5px;\n"
 "}\n"
 "\n"
@@ -95,7 +95,7 @@ class Ui_NN2GUI(object):
 "    color: #F5F3F4;\n"
 "    border: 2px solid #E5383B;\n"
 "    border-radius: 15px;\n"
-"    background-color: #BA181B;\n"
+"    background-color: #0B090A;\n"
 "    padding: 2px;\n"
 "    padding-left: 5px;\n"
 "}\n"
@@ -115,7 +115,7 @@ class Ui_NN2GUI(object):
 "    border: 2px solid #E5383B;\n"
 "    selection-background-color: #A4161A;\n"
 "    color: #F5F3F4;\n"
-"    background-color: #BA181B;\n"
+"    background-color: #0B090A;\n"
 "    border-radius: 5px;\n"
 "}")
         self.input_type.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToMinimumContentsLengthWithIcon)
@@ -147,7 +147,7 @@ class Ui_NN2GUI(object):
 "    color: #F5F3F4;\n"
 "    border: 2px solid #E5383B;\n"
 "    border-radius: 15px;\n"
-"    background-color: #BA181B;\n"
+"    background-color: #0B090A;\n"
 "    padding: 2px;\n"
 "    padding-left: 4px\n"
 "}\n"
@@ -161,7 +161,7 @@ class Ui_NN2GUI(object):
 "    border: 2px solid #E5383B;\n"
 "    selection-background-color: #A4161A;\n"
 "    color: #F5F3F4;\n"
-"    background-color: #BA181B;\n"
+"    background-color: #0B090A;\n"
 "    border-radius: 5px;\n"
 "}")
         self.framework_type.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContentsOnFirstShow)
@@ -201,7 +201,7 @@ class Ui_NN2GUI(object):
 "    color: #F5F3F4;\n"
 "    border: 2px solid #E5383B;\n"
 "    border-radius: 15px;\n"
-"    background-color: #BA181B;\n"
+"    background-color: #0B090A;\n"
 "    padding: 2px;\n"
 "    padding-left: 5px;\n"
 "}\n"
@@ -221,7 +221,7 @@ class Ui_NN2GUI(object):
 "    border: 2px solid #E5383B;\n"
 "    selection-background-color: #A4161A;\n"
 "    color: #F5F3F4;\n"
-"    background-color: #BA181B;\n"
+"    background-color: #0B090A;\n"
 "    border-radius: 5px;\n"
 "}")
         self.output_type.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToMinimumContentsLengthWithIcon)
@@ -239,7 +239,7 @@ class Ui_NN2GUI(object):
 "    color: #F5F3F4;\n"
 "    border: 2px solid #E5383B;\n"
 "    border-radius: 15px;\n"
-"    background-color: #BA181B;\n"
+"    background-color: #0B090A;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -282,11 +282,15 @@ class Ui_NN2GUI(object):
 "    color: #F5F3F4;\n"
 "    border: 2px solid #E5383B;\n"
 "    border-radius: 15px;\n"
-"    background-color: #BA181B;\n"
+"    background-color: #0B090A;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
 "    background-color: #A4161A;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: #BA181B;\n"
 "}")
         self.load_input.setObjectName("load_input")
         self.input_input = QtWidgets.QTextEdit(self.centralwidget)
