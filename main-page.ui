@@ -97,7 +97,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>590</y>
+      <y>570</y>
       <width>161</width>
       <height>41</height>
      </rect>
@@ -650,6 +650,36 @@ QPushButton:hover {
     </property>
     <property name="orientation">
      <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="load_preprocess_error">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>630</y>
+      <width>221</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Narrow</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <italic>true</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	color: #BA181B;
+}</string>
+    </property>
+    <property name="text">
+     <string>Error</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
