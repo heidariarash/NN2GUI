@@ -10,6 +10,8 @@ class MainWindow(QMainWindow):
         super(MainWindow, self).__init__(parent=parent)
         self.ui = Ui_NN2GUI()
         self.ui.setupUi(self)
+        #initializing variables
+        self.valid_prep = False
         #correcting the stylesheets of comboboxes
         QtCore.QTimer.singleShot(100, lambda: self.ui.input_type.setStyleSheet(self.ui.input_type.styleSheet()))
         QtCore.QTimer.singleShot(100, lambda: self.ui.framework_type.setStyleSheet(self.ui.framework_type.styleSheet()))
@@ -24,6 +26,7 @@ class MainWindow(QMainWindow):
         self.ui.load_preprocess.clicked.connect(self.load_preprocess_clicked)
 
     def output_type_change(self, value):
+        #hiding the output classes if the output type is regression.
         if(value == "Regression"):
             self.ui.output_classes.setHidden(True)
             self.ui.output_classes_label.setHidden(True)
@@ -32,20 +35,36 @@ class MainWindow(QMainWindow):
             self.ui.output_classes.setHidden(False)
 
     def load_preprocess_clicked(self):
-        options = QFileDialog.Options()
-        fileName, _ = QFileDialog.getOpenFileName(self,"Choose Preprocess File","","Python Files (*.py)", options=options)
-        try:
-            spec = importlib.util.spec_from_file_location("preprocess", fileName)
-            self.preprocess = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(self.preprocess)
-            if "preprocess" not in dir(self.preprocess):
-                self.ui.load_preprocess_error.setText("* The module does not contain preprocess function.")
+        #checking if there already a preprocess file exists
+        if(not self.valid_prep):
+            options = QFileDialog.Options()
+            fileName, _ = QFileDialog.getOpenFileName(self,"Choose Preprocess File","","Python Files (*.py)", options=options)
+            try:
+                spec = importlib.util.spec_from_file_location("preprocess", fileName)
+                self.preprocess = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(self.preprocess)
+                #when preprocess file is a valid python file but there is no preprocess funtion.
+                if "preprocess" not in dir(self.preprocess):
+                    self.ui.load_preprocess_error.setText("* The module does not contain preprocess function.")
+                    self.ui.load_preprocess_error.setStyleSheet("color: #BA181B")
+                    self.ui.load_preprocess_error.setHidden(False)
+                #when everything is ok.
+                else:
+                    self.ui.load_preprocess_error.setText("* Preprocess File Accepted")
+                    self.ui.load_preprocess_error.setStyleSheet("color: #F5F3F4")
+                    self.ui.load_preprocess_error.setHidden(False)
+                    self.valid_prep = True
+                    self.ui.load_preprocess.setText("Remove Preprocess")
+            #when the file is not a valid python file.
+            except:
+                self.ui.load_preprocess_error.setText("* Something went wrong. Please try again.")
+                self.ui.load_preprocess_error.setStyleSheet("color: #BA181B")
                 self.ui.load_preprocess_error.setHidden(False)
-            else:
-                self.ui.load_preprocess_error.setHidden(True)
-        except:
-            self.ui.load_preprocess_error.setText("* Something went wrong. Please try again.")
-            self.ui.load_preprocess_error.setHidden(False)
+        #changing the functionality to removing preprocess file when one already exists.
+        else:
+            self.valid_prep = False
+            self.ui.load_preprocess_error.setHidden(True)
+            self.ui.load_preprocess.setText("Load Preprocess")
 
 
 if __name__ == "__main__":
