@@ -261,7 +261,7 @@ class Ui_NN2GUI(object):
         self.predictions_info.setWordWrap(True)
         self.predictions_info.setObjectName("predictions_info")
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
-        self.label_5.setGeometry(QtCore.QRect(110, 320, 121, 31))
+        self.label_5.setGeometry(QtCore.QRect(107, 320, 121, 31))
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
         font.setPointSize(14)
