@@ -26,10 +26,11 @@ class MainWindow(QMainWindow):
         self.ui.input_input.setDisabled(True)
         self.ui.load_input.setDisabled(True)
         #connecting different signals to slots
-        self.ui.output_type.currentTextChanged.connect(self.output_type_change)
+        self.ui.output_type.currentTextChanged.connect(self.output_type_changed)
         self.ui.load_preprocess.clicked.connect(self.load_preprocess_clicked)
+        self.ui.input_type.currentTextChanged.connect(self.input_type_changed)
 
-    def output_type_change(self, value):
+    def output_type_changed(self, value):
         #hiding the output classes if the output type is regression.
         if(value == "Regression"):
             self.ui.output_classes.setHidden(True)
@@ -69,6 +70,13 @@ class MainWindow(QMainWindow):
             self.valid_prep = False
             self.ui.load_preprocess_error.setHidden(True)
             self.ui.load_preprocess.setText("Load Preprocess")
+
+    def input_type_changed(self, value):
+        #setting input_input to visible if the type is text and vice versa.
+        if value == "Text":
+            self.ui.input_input.setHidden(False)
+        else:
+            self.ui.input_input.setHidden(True)
 
 
 if __name__ == "__main__":

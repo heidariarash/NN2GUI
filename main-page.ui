@@ -575,7 +575,7 @@ QPushButton:disabled {
     <property name="font">
      <font>
       <family>Arial Narrow</family>
-      <pointsize>8</pointsize>
+      <pointsize>10</pointsize>
      </font>
     </property>
     <property name="styleSheet">
@@ -584,6 +584,10 @@ QPushButton:disabled {
 	border: 1px solid #E5383B;
 	padding: 5px;
 	color: #F5F3F4;
+}
+
+QTextEdit:disabled {
+	background-color: #BA181B;
 }</string>
     </property>
     <property name="verticalScrollBarPolicy">

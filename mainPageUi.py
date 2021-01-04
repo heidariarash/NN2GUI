@@ -297,13 +297,17 @@ class Ui_NN2GUI(object):
         self.input_input.setGeometry(QtCore.QRect(60, 410, 221, 61))
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
-        font.setPointSize(8)
+        font.setPointSize(10)
         self.input_input.setFont(font)
         self.input_input.setStyleSheet("QTextEdit {\n"
 "    border-radius: 15px;\n"
 "    border: 1px solid #E5383B;\n"
 "    padding: 5px;\n"
 "    color: #F5F3F4;\n"
+"}\n"
+"\n"
+"QTextEdit:disabled {\n"
+"    background-color: #BA181B;\n"
 "}")
         self.input_input.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.input_input.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
