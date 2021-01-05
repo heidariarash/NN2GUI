@@ -1,12 +1,20 @@
 from mainPageUi      import Ui_NN2GUI
+from changeClassesUi import Ui_ChangeClasses
 from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, qApp, QDockWidget, QFileDialog
 from PyQt5           import QtWidgets, QtGui, QtCore
 
 import sys
 import importlib.util
 
+class ChangeClass(QMainWindow):
+    def __init__(self, parent = None):
+        super(ChangeClass, self).__init__(parent = parent)
+        self.ui = Ui_ChangeClasses()
+        self.ui.setupUi(self)
+
+
 class MainWindow(QMainWindow):
-    def __init__(self, parent=None):
+    def __init__(self, parent = None):
         super(MainWindow, self).__init__(parent=parent)
         self.ui = Ui_NN2GUI()
         self.ui.setupUi(self)
@@ -29,6 +37,7 @@ class MainWindow(QMainWindow):
         self.ui.output_type.currentTextChanged.connect(self.output_type_changed)
         self.ui.load_preprocess.clicked.connect(self.load_preprocess_clicked)
         self.ui.input_type.currentTextChanged.connect(self.input_type_changed)
+        self.ui.output_classes.clicked.connect(self.output_classes_clicked)
 
     def output_type_changed(self, value):
         #hiding the output classes if the output type is regression.
@@ -77,6 +86,12 @@ class MainWindow(QMainWindow):
             self.ui.input_input.setHidden(False)
         else:
             self.ui.input_input.setHidden(True)
+
+    def output_classes_clicked(self):
+        #opening the new window
+        window = ChangeClass(parent = self)
+        window.setWindowModality(True)
+        window.show()
 
 
 if __name__ == "__main__":
