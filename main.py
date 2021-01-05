@@ -73,7 +73,7 @@ class MainWindow(QMainWindow):
 
     def input_type_changed(self, value):
         #setting input_input to visible if the type is text and vice versa.
-        if value == "Text":
+        if value == "Text" or value == "Tabular":
             self.ui.input_input.setHidden(False)
         else:
             self.ui.input_input.setHidden(True)
