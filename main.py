@@ -11,6 +11,11 @@ class ChangeClass(QMainWindow):
         super(ChangeClass, self).__init__(parent = parent)
         self.ui = Ui_ChangeClasses()
         self.ui.setupUi(self)
+        #connecting different signals to slots
+        self.ui.cancel.clicked.connect(self.cancle_button_clicked)
+
+    def cancle_button_clicked(self):
+        self.close()
 
 
 class MainWindow(QMainWindow):
