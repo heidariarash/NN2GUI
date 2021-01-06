@@ -14,75 +14,20 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_ChangeClasses(object):
     def setupUi(self, ChangeClasses):
         ChangeClasses.setObjectName("ChangeClasses")
-        ChangeClasses.resize(345, 402)
+        ChangeClasses.resize(345, 380)
         ChangeClasses.setStyleSheet("background-color: rgb(22, 26, 29);")
         self.centralwidget = QtWidgets.QWidget(ChangeClasses)
         self.centralwidget.setObjectName("centralwidget")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(30, 50, 281, 31))
-        font = QtGui.QFont()
-        font.setFamily("MV Boli")
-        font.setPointSize(16)
-        self.label.setFont(font)
-        self.label.setStyleSheet("QLabel {\n"
-"    color: #F5F3F4;\n"
-"}")
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setObjectName("label")
-        self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(59, 110, 231, 121))
-        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.label_2 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("MV Boli")
-        font.setPointSize(10)
-        self.label_2.setFont(font)
-        self.label_2.setStyleSheet("QLabel {\n"
-"    color: #F5F3F4;\n"
-"}")
-        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_2.setObjectName("label_2")
-        self.horizontalLayout_2.addWidget(self.label_2)
-        self.verticalLayout.addLayout(self.horizontalLayout_2)
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.label_3 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        font = QtGui.QFont()
-        font.setFamily("MV Boli")
-        font.setPointSize(10)
-        self.label_3.setFont(font)
-        self.label_3.setStyleSheet("QLabel {\n"
-"    color: #F5F3F4;\n"
-"}")
-        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_3.setObjectName("label_3")
-        self.horizontalLayout_3.addWidget(self.label_3)
-        self.verticalLayout.addLayout(self.horizontalLayout_3)
-        self.add_class = QtWidgets.QPushButton(self.centralwidget)
-        self.add_class.setGeometry(QtCore.QRect(117, 280, 121, 30))
-        font = QtGui.QFont()
-        font.setFamily("Arial Narrow")
-        font.setPointSize(11)
-        self.add_class.setFont(font)
-        self.add_class.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.add_class.setStyleSheet("QPushButton {\n"
-"    color: #F5F3F4;\n"
-"    border: 2px solid #E5383B;\n"
-"    border-radius: 15px;\n"
-"    background-color: #0B090A;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #A4161A;\n"
-"}")
-        self.add_class.setObjectName("add_class")
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setContentsMargins(10, 10, 10, 10)
+        self.gridLayout.setSpacing(20)
+        self.gridLayout.setObjectName("gridLayout")
         self.ok = QtWidgets.QPushButton(self.centralwidget)
-        self.ok.setGeometry(QtCore.QRect(50, 330, 100, 30))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(10)
+        sizePolicy.setHeightForWidth(self.ok.sizePolicy().hasHeightForWidth())
+        self.ok.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
         font.setPointSize(11)
@@ -93,14 +38,153 @@ class Ui_ChangeClasses(object):
 "    border: 2px solid #E5383B;\n"
 "    border-radius: 15px;\n"
 "    background-color: #0B090A;\n"
+"    margin-left: 20px;\n"
+"    margin-right: 20px;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
 "    background-color: #A4161A;\n"
 "}")
         self.ok.setObjectName("ok")
+        self.gridLayout.addWidget(self.ok, 6, 0, 1, 1)
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        font = QtGui.QFont()
+        font.setFamily("MV Boli")
+        font.setPointSize(16)
+        self.label.setFont(font)
+        self.label.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.gridLayout.addWidget(self.label, 0, 0, 1, 2)
+        self.add_class = QtWidgets.QPushButton(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(10)
+        sizePolicy.setHeightForWidth(self.add_class.sizePolicy().hasHeightForWidth())
+        self.add_class.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        self.add_class.setFont(font)
+        self.add_class.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.add_class.setStyleSheet("QPushButton {\n"
+"    color: #F5F3F4;\n"
+"    border: 2px solid #E5383B;\n"
+"    border-radius: 15px;\n"
+"    background-color: #0B090A;\n"
+"    margin-left: 40px;\n"
+"    margin-right: 40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #A4161A;\n"
+"}")
+        self.add_class.setObjectName("add_class")
+        self.gridLayout.addWidget(self.add_class, 1, 0, 1, 2)
+        self.scrollArea = QtWidgets.QScrollArea(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(60)
+        sizePolicy.setHeightForWidth(self.scrollArea.sizePolicy().hasHeightForWidth())
+        self.scrollArea.setSizePolicy(sizePolicy)
+        self.scrollArea.setMinimumSize(QtCore.QSize(0, 0))
+        self.scrollArea.setStyleSheet("QScrollArea{\n"
+"    border:0px;\n"
+"}")
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setObjectName("scrollArea")
+        self.scrollAreaWidgetContents = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 325, 189))
+        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
+        self.gridLayout_3 = QtWidgets.QGridLayout(self.scrollAreaWidgetContents)
+        self.gridLayout_3.setObjectName("gridLayout_3")
+        self.label_3 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(30)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
+        self.label_3.setSizePolicy(sizePolicy)
+        self.label_3.setMinimumSize(QtCore.QSize(50, 50))
+        self.label_3.setMaximumSize(QtCore.QSize(50, 50))
+        font = QtGui.QFont()
+        font.setFamily("MV Boli")
+        font.setPointSize(10)
+        self.label_3.setFont(font)
+        self.label_3.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_3.setObjectName("label_3")
+        self.gridLayout_3.addWidget(self.label_3, 2, 0, 1, 1)
+        self.lineEdit = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.MinimumExpanding)
+        sizePolicy.setHorizontalStretch(50)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit.sizePolicy().hasHeightForWidth())
+        self.lineEdit.setSizePolicy(sizePolicy)
+        self.lineEdit.setMinimumSize(QtCore.QSize(50, 50))
+        self.lineEdit.setMaximumSize(QtCore.QSize(50, 50))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        font.setUnderline(False)
+        self.lineEdit.setFont(font)
+        self.lineEdit.setStyleSheet("QLineEdit{\n"
+"    border: 0px;\n"
+"    border-bottom: 1px;\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.lineEdit.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit.setObjectName("lineEdit")
+        self.gridLayout_3.addWidget(self.lineEdit, 0, 1, 1, 1)
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(50)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_2.sizePolicy().hasHeightForWidth())
+        self.lineEdit_2.setSizePolicy(sizePolicy)
+        self.lineEdit_2.setMinimumSize(QtCore.QSize(50, 50))
+        self.lineEdit_2.setMaximumSize(QtCore.QSize(50, 50))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        font.setUnderline(False)
+        self.lineEdit_2.setFont(font)
+        self.lineEdit_2.setStyleSheet("QLineEdit{\n"
+"    border: 0px;\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.lineEdit_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.gridLayout_3.addWidget(self.lineEdit_2, 2, 1, 1, 1)
+        self.label_2 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(30)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_2.sizePolicy().hasHeightForWidth())
+        self.label_2.setSizePolicy(sizePolicy)
+        self.label_2.setMinimumSize(QtCore.QSize(50, 50))
+        self.label_2.setMaximumSize(QtCore.QSize(50, 50))
+        font = QtGui.QFont()
+        font.setFamily("MV Boli")
+        font.setPointSize(10)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setObjectName("label_2")
+        self.gridLayout_3.addWidget(self.label_2, 0, 0, 1, 1)
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.gridLayout.addWidget(self.scrollArea, 4, 0, 1, 2)
         self.cancel = QtWidgets.QPushButton(self.centralwidget)
-        self.cancel.setGeometry(QtCore.QRect(210, 330, 100, 30))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(10)
+        sizePolicy.setHeightForWidth(self.cancel.sizePolicy().hasHeightForWidth())
+        self.cancel.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
         font.setPointSize(11)
@@ -111,12 +195,15 @@ class Ui_ChangeClasses(object):
 "    border: 2px solid #E5383B;\n"
 "    border-radius: 15px;\n"
 "    background-color: #0B090A;\n"
+"    margin-left: 20px;\n"
+"    margin-right: 20px;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
 "    background-color: #A4161A;\n"
 "}")
         self.cancel.setObjectName("cancel")
+        self.gridLayout.addWidget(self.cancel, 6, 1, 1, 1)
         ChangeClasses.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(ChangeClasses)
         self.statusbar.setObjectName("statusbar")
@@ -128,9 +215,11 @@ class Ui_ChangeClasses(object):
     def retranslateUi(self, ChangeClasses):
         _translate = QtCore.QCoreApplication.translate
         ChangeClasses.setWindowTitle(_translate("ChangeClasses", "Change Output Classes"))
-        self.label.setText(_translate("ChangeClasses", "Edit Output Classes Names"))
-        self.label_2.setText(_translate("ChangeClasses", "0"))
-        self.label_3.setText(_translate("ChangeClasses", "1"))
-        self.add_class.setText(_translate("ChangeClasses", "Add Class"))
         self.ok.setText(_translate("ChangeClasses", "OK"))
+        self.label.setText(_translate("ChangeClasses", "Edit Output Classes Names"))
+        self.add_class.setText(_translate("ChangeClasses", "Add Another Class"))
+        self.label_3.setText(_translate("ChangeClasses", "1"))
+        self.lineEdit.setText(_translate("ChangeClasses", "Class 0"))
+        self.lineEdit_2.setText(_translate("ChangeClasses", "Class 1"))
+        self.label_2.setText(_translate("ChangeClasses", "0"))
         self.cancel.setText(_translate("ChangeClasses", "Cancel"))
