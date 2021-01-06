@@ -11,11 +11,21 @@ class ChangeClass(QMainWindow):
         super(ChangeClass, self).__init__(parent = parent)
         self.ui = Ui_ChangeClasses()
         self.ui.setupUi(self)
+        #initializing variables
+        self.classes = 0
         #connecting different signals to slots
         self.ui.cancel.clicked.connect(self.cancle_button_clicked)
+        self.ui.ok.clicked.connect(self.ok_button_clicked)
+        self.ui.add_class.clicked.connect(self.add_class_button_clicked)
 
     def cancle_button_clicked(self):
         self.close()
+
+    def ok_button_clicked(self):
+        self.parent().ui.predictions.setText(str(self.classes))
+
+    def add_class_button_clicked(self):
+        self.classes += 1
 
 
 class MainWindow(QMainWindow):
@@ -32,7 +42,7 @@ class MainWindow(QMainWindow):
         QtCore.QTimer.singleShot(100, lambda: self.ui.output_type.setStyleSheet(self.ui.output_type.styleSheet()))
         #setting parts of the GUI in hidden mode
         self.ui.predictions_info.setHidden(True)
-        self.ui.predictions.setHidden(True)
+        # self.ui.predictions.setHidden(True)
         self.ui.input_input.setHidden(True)
         self.ui.load_preprocess_error.setHidden(True)
         #disabling some buttons and inputs
@@ -96,6 +106,7 @@ class MainWindow(QMainWindow):
         #opening the new window
         window = ChangeClass(parent = self)
         window.setWindowModality(True)
+        # window.classes = 5
         window.show()
 
 
