@@ -16,6 +16,12 @@
     <height>750</height>
    </size>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>1000</width>
+    <height>750</height>
+   </size>
+  </property>
   <property name="font">
    <font>
     <pointsize>9</pointsize>
@@ -44,6 +50,221 @@
     <property name="spacing">
      <number>10</number>
     </property>
+    <item row="0" column="1">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Preferred</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="2" rowspan="6">
+     <layout class="QGridLayout" name="gridLayout_4">
+      <property name="verticalSpacing">
+       <number>20</number>
+      </property>
+      <item row="6" column="0">
+       <widget class="QLabel" name="predictions">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>30</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	color: #F5F3F4;
+}</string>
+        </property>
+        <property name="text">
+         <string>Predictions</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::PlainText</enum>
+        </property>
+        <property name="scaledContents">
+         <bool>false</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="Line" name="line">
+        <property name="styleSheet">
+         <string notr="true">QFrame{
+	background-color: #E5383B;
+}</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="predictions_info">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>5</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+          <pointsize>20</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	color: #F5F3F4;
+}</string>
+        </property>
+        <property name="text">
+         <string>Predictions</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::PlainText</enum>
+        </property>
+        <property name="scaledContents">
+         <bool>false</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLabel" name="prediction_info_holder">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>38</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" colspan="2">
+       <widget class="QPushButton" name="load_model">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>5</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial Narrow</family>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    color: #F5F3F4;
+    border: 2px solid #E5383B;
+    border-radius: 15px;
+    background-color: #0B090A;
+	margin: 1px;
+	margin-left: 80px;
+	margin-right: 80px;
+}
+
+QPushButton:hover {
+    background-color: #A4161A;
+}</string>
+        </property>
+        <property name="text">
+         <string>Load Model</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="QLabel" name="model_info">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>40</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>480</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>MV Boli</family>
+          <pointsize>28</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	color: #F5F3F4;
+}</string>
+        </property>
+        <property name="text">
+         <string>Waiting passionately for a model!</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::PlainText</enum>
+        </property>
+        <property name="scaledContents">
+         <bool>false</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QLabel" name="predictions_holder">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>232</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
     <item row="0" column="0" rowspan="6">
      <layout class="QGridLayout" name="gridLayout_3">
       <property name="sizeConstraint">
@@ -52,7 +273,7 @@
       <item row="1" column="0">
        <widget class="QComboBox" name="input_type">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>0</horstretch>
           <verstretch>15</verstretch>
          </sizepolicy>
@@ -131,7 +352,7 @@ QComboBox QAbstractItemView {
       <item row="0" column="0">
        <widget class="QLabel" name="label">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>40</horstretch>
           <verstretch>10</verstretch>
          </sizepolicy>
@@ -158,7 +379,7 @@ QComboBox QAbstractItemView {
       <item row="1" column="1">
        <widget class="QComboBox" name="output_type">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
           <verstretch>15</verstretch>
          </sizepolicy>
@@ -219,37 +440,40 @@ QComboBox QAbstractItemView {
         </item>
        </widget>
       </item>
-      <item row="8" column="0" colspan="2">
-       <widget class="QTextEdit" name="input_input">
+      <item row="9" column="0" colspan="2">
+       <widget class="QPushButton" name="load_preprocess">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>15</verstretch>
+         </sizepolicy>
+        </property>
         <property name="font">
          <font>
           <family>Arial Narrow</family>
-          <pointsize>10</pointsize>
+          <pointsize>12</pointsize>
          </font>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
-         <string notr="true">QTextEdit {
-	border-radius: 15px;
-	border: 1px solid #E5383B;
-	padding: 5px;
-	color: #F5F3F4;
+         <string notr="true">QPushButton {
+    color: #F5F3F4;
+    border: 2px solid #E5383B;
+    border-radius: 15px;
+    background-color: #0B090A;
+	margin: 20px;
+	margin-left: 140px;
+	margin-right: 140px;
 }
 
-QTextEdit:disabled {
-	background-color: #BA181B;
+QPushButton:hover {
+    background-color: #A4161A;
 }</string>
         </property>
-        <property name="verticalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
-        </property>
-        <property name="horizontalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
-        </property>
-        <property name="acceptRichText">
-         <bool>true</bool>
-        </property>
-        <property name="placeholderText">
-         <string>Type Your Input Here ...</string>
+        <property name="text">
+         <string>Load Preprocess</string>
         </property>
        </widget>
       </item>
@@ -297,7 +521,7 @@ QPushButton:disabled {
       <item row="2" column="1">
        <widget class="QLabel" name="output_classes_label">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>40</horstretch>
           <verstretch>10</verstretch>
          </sizepolicy>
@@ -324,7 +548,7 @@ QPushButton:disabled {
       <item row="2" column="0">
        <widget class="QLabel" name="label_2">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>40</horstretch>
           <verstretch>10</verstretch>
          </sizepolicy>
@@ -351,7 +575,7 @@ QPushButton:disabled {
       <item row="0" column="1">
        <widget class="QLabel" name="label_3">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>40</horstretch>
           <verstretch>10</verstretch>
          </sizepolicy>
@@ -378,7 +602,7 @@ QPushButton:disabled {
       <item row="3" column="0">
        <widget class="QComboBox" name="framework_type">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>0</horstretch>
           <verstretch>15</verstretch>
          </sizepolicy>
@@ -436,7 +660,7 @@ QComboBox QAbstractItemView {
       <item row="3" column="1">
        <widget class="QPushButton" name="output_classes">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
           <horstretch>0</horstretch>
           <verstretch>15</verstretch>
          </sizepolicy>
@@ -472,6 +696,12 @@ QPushButton:hover {
       </item>
       <item row="5" column="0" colspan="2">
        <widget class="QLabel" name="label_5">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="minimumSize">
          <size>
           <width>450</width>
@@ -497,45 +727,73 @@ QPushButton:hover {
         </property>
        </widget>
       </item>
-      <item row="9" column="0" colspan="2">
-       <widget class="QPushButton" name="load_preprocess">
+      <item row="8" column="1">
+       <widget class="QLabel" name="input_holder">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>192</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QTextEdit" name="input_input">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
-          <verstretch>15</verstretch>
+          <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>192</height>
+         </size>
         </property>
         <property name="font">
          <font>
           <family>Arial Narrow</family>
-          <pointsize>12</pointsize>
+          <pointsize>10</pointsize>
          </font>
         </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton {
-    color: #F5F3F4;
-    border: 2px solid #E5383B;
-    border-radius: 15px;
-    background-color: #0B090A;
-	margin: 20px;
-	margin-left: 140px;
-	margin-right: 140px;
+         <string notr="true">QTextEdit {
+	border-radius: 15px;
+	border: 1px solid #E5383B;
+	padding: 5px;
+	color: #F5F3F4;
 }
 
-QPushButton:hover {
-    background-color: #A4161A;
+QTextEdit:disabled {
+	background-color: #BA181B;
 }</string>
         </property>
-        <property name="text">
-         <string>Load Preprocess</string>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="acceptRichText">
+         <bool>true</bool>
+        </property>
+        <property name="placeholderText">
+         <string>Type Your Input Here ...</string>
         </property>
        </widget>
       </item>
-      <item row="10" column="0" colspan="2">
+      <item row="11" column="0">
        <widget class="QLabel" name="load_preprocess_error">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="font">
          <font>
           <family>Arial Narrow</family>
@@ -558,196 +816,20 @@ QPushButton:hover {
         </property>
        </widget>
       </item>
-     </layout>
-    </item>
-    <item row="0" column="2" rowspan="6">
-     <layout class="QGridLayout" name="gridLayout_4">
-      <property name="verticalSpacing">
-       <number>20</number>
-      </property>
-      <item row="6" column="0">
-       <widget class="QLabel" name="predictions">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>30</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>MV Boli</family>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-	color: #F5F3F4;
-}</string>
-        </property>
-        <property name="text">
-         <string>Predictions</string>
-        </property>
-        <property name="textFormat">
-         <enum>Qt::PlainText</enum>
-        </property>
-        <property name="scaledContents">
-         <bool>false</bool>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="load_model">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>5</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>Arial Narrow</family>
-          <pointsize>16</pointsize>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-    color: #F5F3F4;
-    border: 2px solid #E5383B;
-    border-radius: 15px;
-    background-color: #0B090A;
-	margin: 1px;
-	margin-left: 80px;
-	margin-right: 80px;
-}
-
-QPushButton:hover {
-    background-color: #A4161A;
-}</string>
-        </property>
-        <property name="text">
-         <string>Load Model</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="predictions_info">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>5</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="font">
-         <font>
-          <family>MV Boli</family>
-          <pointsize>20</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-	color: #F5F3F4;
-}</string>
-        </property>
-        <property name="text">
-         <string>Predictions</string>
-        </property>
-        <property name="textFormat">
-         <enum>Qt::PlainText</enum>
-        </property>
-        <property name="scaledContents">
-         <bool>false</bool>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="model_info">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>40</verstretch>
-         </sizepolicy>
-        </property>
+      <item row="11" column="1">
+       <widget class="QLabel" name="error_holder">
         <property name="minimumSize">
          <size>
-          <width>480</width>
-          <height>0</height>
+          <width>0</width>
+          <height>16</height>
          </size>
         </property>
-        <property name="font">
-         <font>
-          <family>MV Boli</family>
-          <pointsize>28</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-	color: #F5F3F4;
-}</string>
-        </property>
         <property name="text">
-         <string>Waiting passionately for a model!</string>
-        </property>
-        <property name="textFormat">
-         <enum>Qt::PlainText</enum>
-        </property>
-        <property name="scaledContents">
-         <bool>false</bool>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="Line" name="line">
-        <property name="styleSheet">
-         <string notr="true">QFrame{
-	background-color: #E5383B;
-}</string>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
+         <string/>
         </property>
        </widget>
       </item>
      </layout>
-    </item>
-    <item row="0" column="1">
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Preferred</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
     </item>
    </layout>
   </widget>
