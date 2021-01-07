@@ -23,114 +23,101 @@ class Ui_NN2GUI(object):
         NN2GUI.setStyleSheet("background-color: rgb(22, 26, 29);")
         self.centralwidget = QtWidgets.QWidget(NN2GUI)
         self.centralwidget.setObjectName("centralwidget")
-        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
-        self.gridLayout.setContentsMargins(15, 15, 15, 15)
-        self.gridLayout.setSpacing(10)
-        self.gridLayout.setObjectName("gridLayout")
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem, 0, 1, 1, 1)
-        self.gridLayout_4 = QtWidgets.QGridLayout()
-        self.gridLayout_4.setVerticalSpacing(20)
-        self.gridLayout_4.setObjectName("gridLayout_4")
-        self.line = QtWidgets.QFrame(self.centralwidget)
-        self.line.setStyleSheet("QFrame{\n"
-"    background-color: #E5383B;\n"
-"}")
-        self.line.setFrameShape(QtWidgets.QFrame.VLine)
-        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line.setObjectName("line")
-        self.gridLayout_4.addWidget(self.line, 3, 0, 1, 1)
-        self.load_model = QtWidgets.QPushButton(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        self.framework_type = QtWidgets.QComboBox(self.centralwidget)
+        self.framework_type.setGeometry(QtCore.QRect(70, 200, 120, 30))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(5)
-        sizePolicy.setHeightForWidth(self.load_model.sizePolicy().hasHeightForWidth())
-        self.load_model.setSizePolicy(sizePolicy)
-        self.load_model.setMaximumSize(QtCore.QSize(480, 40))
+        sizePolicy.setVerticalStretch(15)
+        sizePolicy.setHeightForWidth(self.framework_type.sizePolicy().hasHeightForWidth())
+        self.framework_type.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
-        font.setPointSize(16)
-        self.load_model.setFont(font)
-        self.load_model.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.load_model.setStyleSheet("QPushButton {\n"
+        font.setPointSize(11)
+        self.framework_type.setFont(font)
+        self.framework_type.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.framework_type.setStyleSheet("QComboBox{\n"
 "    color: #F5F3F4;\n"
 "    border: 2px solid #E5383B;\n"
 "    border-radius: 15px;\n"
 "    background-color: #0B090A;\n"
-"    margin: 1px;\n"
-"    margin-left: 80px;\n"
-"    margin-right: 80px;\n"
+"    padding: 2px;\n"
+"    padding-left: 4px;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"    border: 0px;\n"
+"    width: 0px;\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView {\n"
+"    border: 2px solid #E5383B;\n"
+"    selection-background-color: #A4161A;\n"
+"    color: #F5F3F4;\n"
+"    background-color: #0B090A;\n"
+"    border-radius: 5px;\n"
+"}")
+        self.framework_type.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContentsOnFirstShow)
+        self.framework_type.setObjectName("framework_type")
+        self.framework_type.addItem("")
+        self.framework_type.addItem("")
+        self.label_3 = QtWidgets.QLabel(self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(270, 50, 120, 23))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(40)
+        sizePolicy.setVerticalStretch(10)
+        sizePolicy.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
+        self.label_3.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(14)
+        self.label_3.setFont(font)
+        self.label_3.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_3.setObjectName("label_3")
+        self.label_5 = QtWidgets.QLabel(self.centralwidget)
+        self.label_5.setGeometry(QtCore.QRect(170, 290, 120, 23))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_5.sizePolicy().hasHeightForWidth())
+        self.label_5.setSizePolicy(sizePolicy)
+        self.label_5.setMinimumSize(QtCore.QSize(0, 0))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(14)
+        self.label_5.setFont(font)
+        self.label_5.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.label_5.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_5.setObjectName("label_5")
+        self.output_classes = QtWidgets.QPushButton(self.centralwidget)
+        self.output_classes.setGeometry(QtCore.QRect(270, 200, 120, 30))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(15)
+        sizePolicy.setHeightForWidth(self.output_classes.sizePolicy().hasHeightForWidth())
+        self.output_classes.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        self.output_classes.setFont(font)
+        self.output_classes.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.output_classes.setStyleSheet("QPushButton {\n"
+"    color: #F5F3F4;\n"
+"    border: 2px solid #E5383B;\n"
+"    border-radius: 15px;\n"
+"    background-color: #0B090A;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
 "    background-color: #A4161A;\n"
 "}")
-        self.load_model.setObjectName("load_model")
-        self.gridLayout_4.addWidget(self.load_model, 2, 0, 1, 2)
-        self.model_info = QtWidgets.QLabel(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(40)
-        sizePolicy.setHeightForWidth(self.model_info.sizePolicy().hasHeightForWidth())
-        self.model_info.setSizePolicy(sizePolicy)
-        self.model_info.setMinimumSize(QtCore.QSize(480, 0))
-        font = QtGui.QFont()
-        font.setFamily("MV Boli")
-        font.setPointSize(28)
-        self.model_info.setFont(font)
-        self.model_info.setStyleSheet("QLabel {\n"
-"    color: #F5F3F4;\n"
-"}")
-        self.model_info.setTextFormat(QtCore.Qt.PlainText)
-        self.model_info.setScaledContents(False)
-        self.model_info.setAlignment(QtCore.Qt.AlignCenter)
-        self.model_info.setWordWrap(True)
-        self.model_info.setObjectName("model_info")
-        self.gridLayout_4.addWidget(self.model_info, 1, 0, 1, 2)
-        self.predictions_info = QtWidgets.QLabel(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(5)
-        sizePolicy.setHeightForWidth(self.predictions_info.sizePolicy().hasHeightForWidth())
-        self.predictions_info.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("MV Boli")
-        font.setPointSize(20)
-        self.predictions_info.setFont(font)
-        self.predictions_info.setStyleSheet("QLabel {\n"
-"    color: #F5F3F4;\n"
-"}")
-        self.predictions_info.setTextFormat(QtCore.Qt.PlainText)
-        self.predictions_info.setScaledContents(False)
-        self.predictions_info.setAlignment(QtCore.Qt.AlignCenter)
-        self.predictions_info.setWordWrap(True)
-        self.predictions_info.setObjectName("predictions_info")
-        self.gridLayout_4.addWidget(self.predictions_info, 4, 0, 1, 2)
-        self.predictions = QtWidgets.QLabel(self.centralwidget)
-        self.predictions.setEnabled(True)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(30)
-        sizePolicy.setHeightForWidth(self.predictions.sizePolicy().hasHeightForWidth())
-        self.predictions.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("MV Boli")
-        font.setPointSize(12)
-        self.predictions.setFont(font)
-        self.predictions.setStyleSheet("QLabel {\n"
-"    color: #F5F3F4;\n"
-"}")
-        self.predictions.setTextFormat(QtCore.Qt.PlainText)
-        self.predictions.setScaledContents(False)
-        self.predictions.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
-        self.predictions.setWordWrap(True)
-        self.predictions.setObjectName("predictions")
-        self.gridLayout_4.addWidget(self.predictions, 6, 0, 1, 2)
-        self.gridLayout.addLayout(self.gridLayout_4, 0, 2, 6, 1)
-        self.gridLayout_3 = QtWidgets.QGridLayout()
-        self.gridLayout_3.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
-        self.gridLayout_3.setObjectName("gridLayout_3")
+        self.output_classes.setObjectName("output_classes")
         self.input_input = QtWidgets.QTextEdit(self.centralwidget)
+        self.input_input.setGeometry(QtCore.QRect(40, 380, 380, 192))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -155,118 +142,13 @@ class Ui_NN2GUI(object):
         self.input_input.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.input_input.setAcceptRichText(True)
         self.input_input.setObjectName("input_input")
-        self.gridLayout_3.addWidget(self.input_input, 8, 0, 1, 2)
-        self.load_preprocess_error = QtWidgets.QLabel(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.load_preprocess_error.sizePolicy().hasHeightForWidth())
-        self.load_preprocess_error.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Arial Narrow")
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setItalic(True)
-        font.setWeight(75)
-        self.load_preprocess_error.setFont(font)
-        self.load_preprocess_error.setStyleSheet("QLabel {\n"
-"    color: #BA181B;\n"
-"}")
-        self.load_preprocess_error.setAlignment(QtCore.Qt.AlignCenter)
-        self.load_preprocess_error.setObjectName("load_preprocess_error")
-        self.gridLayout_3.addWidget(self.load_preprocess_error, 11, 0, 1, 2)
-        self.label_5 = QtWidgets.QLabel(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_5.sizePolicy().hasHeightForWidth())
-        self.label_5.setSizePolicy(sizePolicy)
-        self.label_5.setMinimumSize(QtCore.QSize(450, 0))
-        font = QtGui.QFont()
-        font.setFamily("Arial Narrow")
-        font.setPointSize(14)
-        self.label_5.setFont(font)
-        self.label_5.setStyleSheet("QLabel {\n"
-"    color: #F5F3F4;\n"
-"}")
-        self.label_5.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_5.setObjectName("label_5")
-        self.gridLayout_3.addWidget(self.label_5, 5, 0, 1, 2)
-        self.framework_type = QtWidgets.QComboBox(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(15)
-        sizePolicy.setHeightForWidth(self.framework_type.sizePolicy().hasHeightForWidth())
-        self.framework_type.setSizePolicy(sizePolicy)
-        self.framework_type.setMaximumSize(QtCore.QSize(222, 70))
-        font = QtGui.QFont()
-        font.setFamily("Arial Narrow")
-        font.setPointSize(11)
-        self.framework_type.setFont(font)
-        self.framework_type.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.framework_type.setStyleSheet("QComboBox{\n"
-"    color: #F5F3F4;\n"
-"    border: 2px solid #E5383B;\n"
-"    border-radius: 15px;\n"
-"    background-color: #0B090A;\n"
-"    padding: 2px;\n"
-"    padding-left: 4px;\n"
-"    margin: 20px;\n"
-"    margin-left: 40px;\n"
-"    margin-right: 40px;\n"
-"}\n"
-"\n"
-"QComboBox::drop-down {\n"
-"    border: 0px;\n"
-"    width: 0px;\n"
-"}\n"
-"\n"
-"QComboBox QAbstractItemView {\n"
-"    border: 2px solid #E5383B;\n"
-"    selection-background-color: #A4161A;\n"
-"    color: #F5F3F4;\n"
-"    background-color: #0B090A;\n"
-"    border-radius: 5px;\n"
-"}")
-        self.framework_type.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContentsOnFirstShow)
-        self.framework_type.setObjectName("framework_type")
-        self.framework_type.addItem("")
-        self.framework_type.addItem("")
-        self.gridLayout_3.addWidget(self.framework_type, 3, 0, 1, 1)
-        self.output_classes = QtWidgets.QPushButton(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(15)
-        sizePolicy.setHeightForWidth(self.output_classes.sizePolicy().hasHeightForWidth())
-        self.output_classes.setSizePolicy(sizePolicy)
-        self.output_classes.setMaximumSize(QtCore.QSize(222, 70))
-        font = QtGui.QFont()
-        font.setFamily("Arial Narrow")
-        font.setPointSize(11)
-        self.output_classes.setFont(font)
-        self.output_classes.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.output_classes.setStyleSheet("QPushButton {\n"
-"    color: #F5F3F4;\n"
-"    border: 2px solid #E5383B;\n"
-"    border-radius: 15px;\n"
-"    background-color: #0B090A;\n"
-"    margin: 20px;\n"
-"    margin-left: 40px;\n"
-"    margin-right: 40px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #A4161A;\n"
-"}")
-        self.output_classes.setObjectName("output_classes")
-        self.gridLayout_3.addWidget(self.output_classes, 3, 1, 1, 1)
         self.input_type = QtWidgets.QComboBox(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        self.input_type.setGeometry(QtCore.QRect(70, 90, 120, 30))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(15)
         sizePolicy.setHeightForWidth(self.input_type.sizePolicy().hasHeightForWidth())
         self.input_type.setSizePolicy(sizePolicy)
-        self.input_type.setMaximumSize(QtCore.QSize(222, 70))
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
         font.setPointSize(11)
@@ -279,9 +161,6 @@ class Ui_NN2GUI(object):
 "    background-color: #0B090A;\n"
 "    padding: 2px;\n"
 "    padding-left: 5px;\n"
-"    margin: 20px;\n"
-"    margin-left: 40px;\n"
-"    margin-right: 40px;\n"
 "}\n"
 "\n"
 "QComboBox::drop-down {\n"
@@ -309,58 +188,13 @@ class Ui_NN2GUI(object):
         self.input_type.addItem("")
         self.input_type.addItem("")
         self.input_type.addItem("")
-        self.gridLayout_3.addWidget(self.input_type, 1, 0, 1, 1)
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(40)
-        sizePolicy.setVerticalStretch(10)
-        sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
-        self.label.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Arial Narrow")
-        font.setPointSize(14)
-        self.label.setFont(font)
-        self.label.setStyleSheet("QLabel {\n"
-"    color: #F5F3F4;\n"
-"}")
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setObjectName("label")
-        self.gridLayout_3.addWidget(self.label, 0, 0, 1, 1)
-        self.load_preprocess = QtWidgets.QPushButton(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(15)
-        sizePolicy.setHeightForWidth(self.load_preprocess.sizePolicy().hasHeightForWidth())
-        self.load_preprocess.setSizePolicy(sizePolicy)
-        self.load_preprocess.setMaximumSize(QtCore.QSize(450, 80))
-        font = QtGui.QFont()
-        font.setFamily("Arial Narrow")
-        font.setPointSize(12)
-        self.load_preprocess.setFont(font)
-        self.load_preprocess.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.load_preprocess.setStyleSheet("QPushButton {\n"
-"    color: #F5F3F4;\n"
-"    border: 2px solid #E5383B;\n"
-"    border-radius: 17px;\n"
-"    background-color: #0B090A;\n"
-"    margin: 20px;\n"
-"    margin-left: 140px;\n"
-"    margin-right: 140px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #A4161A;\n"
-"}")
-        self.load_preprocess.setObjectName("load_preprocess")
-        self.gridLayout_3.addWidget(self.load_preprocess, 9, 0, 1, 2)
         self.output_type = QtWidgets.QComboBox(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        self.output_type.setGeometry(QtCore.QRect(270, 90, 120, 30))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(15)
         sizePolicy.setHeightForWidth(self.output_type.sizePolicy().hasHeightForWidth())
         self.output_type.setSizePolicy(sizePolicy)
-        self.output_type.setMinimumSize(QtCore.QSize(222, 70))
-        self.output_type.setMaximumSize(QtCore.QSize(222, 70))
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
         font.setPointSize(11)
@@ -373,9 +207,6 @@ class Ui_NN2GUI(object):
 "    background-color: #0B090A;\n"
 "    padding: 2px;\n"
 "    padding-left: 5px;\n"
-"    margin: 20px;\n"
-"    margin-left: 40px;\n"
-"    margin-right: 40px;\n"
 "}\n"
 "\n"
 "QComboBox::drop-down {\n"
@@ -400,8 +231,74 @@ class Ui_NN2GUI(object):
         self.output_type.setObjectName("output_type")
         self.output_type.addItem("")
         self.output_type.addItem("")
-        self.gridLayout_3.addWidget(self.output_type, 1, 1, 1, 1)
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(70, 50, 120, 23))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(40)
+        sizePolicy.setVerticalStretch(10)
+        sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
+        self.label.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(14)
+        self.label.setFont(font)
+        self.label.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.label.setAlignment(QtCore.Qt.AlignCenter)
+        self.label.setObjectName("label")
+        self.load_input = QtWidgets.QPushButton(self.centralwidget)
+        self.load_input.setGeometry(QtCore.QRect(170, 330, 120, 30))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(15)
+        sizePolicy.setHeightForWidth(self.load_input.sizePolicy().hasHeightForWidth())
+        self.load_input.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        self.load_input.setFont(font)
+        self.load_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.load_input.setStyleSheet("QPushButton {\n"
+"    color: #F5F3F4;\n"
+"    border: 2px solid #E5383B;\n"
+"    border-radius: 15px;\n"
+"    background-color: #0B090A;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #A4161A;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: #BA181B;\n"
+"}")
+        self.load_input.setObjectName("load_input")
+        self.load_preprocess = QtWidgets.QPushButton(self.centralwidget)
+        self.load_preprocess.setGeometry(QtCore.QRect(130, 630, 200, 41))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(15)
+        sizePolicy.setHeightForWidth(self.load_preprocess.sizePolicy().hasHeightForWidth())
+        self.load_preprocess.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(12)
+        self.load_preprocess.setFont(font)
+        self.load_preprocess.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.load_preprocess.setStyleSheet("QPushButton {\n"
+"    color: #F5F3F4;\n"
+"    border: 2px solid #E5383B;\n"
+"    border-radius: 20px;\n"
+"    background-color: #0B090A;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #A4161A;\n"
+"}")
+        self.load_preprocess.setObjectName("load_preprocess")
         self.output_classes_label = QtWidgets.QLabel(self.centralwidget)
+        self.output_classes_label.setGeometry(QtCore.QRect(270, 160, 120, 23))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(40)
         sizePolicy.setVerticalStretch(10)
@@ -416,24 +313,8 @@ class Ui_NN2GUI(object):
 "}")
         self.output_classes_label.setAlignment(QtCore.Qt.AlignCenter)
         self.output_classes_label.setObjectName("output_classes_label")
-        self.gridLayout_3.addWidget(self.output_classes_label, 2, 1, 1, 1)
-        self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(40)
-        sizePolicy.setVerticalStretch(10)
-        sizePolicy.setHeightForWidth(self.label_3.sizePolicy().hasHeightForWidth())
-        self.label_3.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Arial Narrow")
-        font.setPointSize(14)
-        self.label_3.setFont(font)
-        self.label_3.setStyleSheet("QLabel {\n"
-"    color: #F5F3F4;\n"
-"}")
-        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_3.setObjectName("label_3")
-        self.gridLayout_3.addWidget(self.label_3, 0, 1, 1, 1)
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(70, 160, 120, 23))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(40)
         sizePolicy.setVerticalStretch(10)
@@ -448,39 +329,123 @@ class Ui_NN2GUI(object):
 "}")
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
-        self.gridLayout_3.addWidget(self.label_2, 2, 0, 1, 1)
-        self.load_input = QtWidgets.QPushButton(self.centralwidget)
+        self.load_preprocess_error = QtWidgets.QLabel(self.centralwidget)
+        self.load_preprocess_error.setGeometry(QtCore.QRect(40, 690, 380, 20))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(15)
-        sizePolicy.setHeightForWidth(self.load_input.sizePolicy().hasHeightForWidth())
-        self.load_input.setSizePolicy(sizePolicy)
-        self.load_input.setMaximumSize(QtCore.QSize(450, 80))
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.load_preprocess_error.sizePolicy().hasHeightForWidth())
+        self.load_preprocess_error.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setFamily("Arial Narrow")
-        font.setPointSize(14)
-        self.load_input.setFont(font)
-        self.load_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.load_input.setStyleSheet("QPushButton {\n"
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(True)
+        font.setWeight(75)
+        self.load_preprocess_error.setFont(font)
+        self.load_preprocess_error.setStyleSheet("QLabel {\n"
+"    color: #BA181B;\n"
+"}")
+        self.load_preprocess_error.setAlignment(QtCore.Qt.AlignCenter)
+        self.load_preprocess_error.setObjectName("load_preprocess_error")
+        self.predictions = QtWidgets.QLabel(self.centralwidget)
+        self.predictions.setEnabled(True)
+        self.predictions.setGeometry(QtCore.QRect(504, 263, 82, 21))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(30)
+        sizePolicy.setHeightForWidth(self.predictions.sizePolicy().hasHeightForWidth())
+        self.predictions.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("MV Boli")
+        font.setPointSize(12)
+        self.predictions.setFont(font)
+        self.predictions.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.predictions.setTextFormat(QtCore.Qt.PlainText)
+        self.predictions.setScaledContents(False)
+        self.predictions.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.predictions.setWordWrap(True)
+        self.predictions.setObjectName("predictions")
+        self.predictions_info = QtWidgets.QLabel(self.centralwidget)
+        self.predictions_info.setGeometry(QtCore.QRect(504, 205, 139, 34))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(5)
+        sizePolicy.setHeightForWidth(self.predictions_info.sizePolicy().hasHeightForWidth())
+        self.predictions_info.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("MV Boli")
+        font.setPointSize(20)
+        self.predictions_info.setFont(font)
+        self.predictions_info.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.predictions_info.setTextFormat(QtCore.Qt.PlainText)
+        self.predictions_info.setScaledContents(False)
+        self.predictions_info.setAlignment(QtCore.Qt.AlignCenter)
+        self.predictions_info.setWordWrap(True)
+        self.predictions_info.setObjectName("predictions_info")
+        self.line = QtWidgets.QFrame(self.centralwidget)
+        self.line.setGeometry(QtCore.QRect(450, 20, 1, 700))
+        self.line.setStyleSheet("QFrame{\n"
+"    background-color: #E5383B;\n"
+"}")
+        self.line.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName("line")
+        self.prediction_info_holder = QtWidgets.QLabel(self.centralwidget)
+        self.prediction_info_holder.setGeometry(QtCore.QRect(649, 205, 16, 38))
+        self.prediction_info_holder.setMinimumSize(QtCore.QSize(0, 38))
+        self.prediction_info_holder.setText("")
+        self.prediction_info_holder.setObjectName("prediction_info_holder")
+        self.load_model = QtWidgets.QPushButton(self.centralwidget)
+        self.load_model.setGeometry(QtCore.QRect(504, 134, 258, 31))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(5)
+        sizePolicy.setHeightForWidth(self.load_model.sizePolicy().hasHeightForWidth())
+        self.load_model.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(16)
+        self.load_model.setFont(font)
+        self.load_model.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.load_model.setStyleSheet("QPushButton {\n"
 "    color: #F5F3F4;\n"
 "    border: 2px solid #E5383B;\n"
-"    border-radius: 17px;\n"
+"    border-radius: 15px;\n"
 "    background-color: #0B090A;\n"
-"    margin: 20px;\n"
-"    margin-left: 150px;\n"
-"    margin-right: 150px;\n"
+"    margin: 1px;\n"
+"    margin-left: 80px;\n"
+"    margin-right: 80px;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
 "    background-color: #A4161A;\n"
-"}\n"
-"\n"
-"QPushButton:disabled {\n"
-"    background-color: #BA181B;\n"
 "}")
-        self.load_input.setObjectName("load_input")
-        self.gridLayout_3.addWidget(self.load_input, 6, 0, 1, 2)
-        self.gridLayout.addLayout(self.gridLayout_3, 0, 0, 6, 1)
+        self.load_model.setObjectName("load_model")
+        self.model_info = QtWidgets.QLabel(self.centralwidget)
+        self.model_info.setGeometry(QtCore.QRect(504, 16, 480, 98))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(40)
+        sizePolicy.setHeightForWidth(self.model_info.sizePolicy().hasHeightForWidth())
+        self.model_info.setSizePolicy(sizePolicy)
+        self.model_info.setMinimumSize(QtCore.QSize(480, 0))
+        font = QtGui.QFont()
+        font.setFamily("MV Boli")
+        font.setPointSize(28)
+        self.model_info.setFont(font)
+        self.model_info.setStyleSheet("QLabel {\n"
+"    color: #F5F3F4;\n"
+"}")
+        self.model_info.setTextFormat(QtCore.Qt.PlainText)
+        self.model_info.setScaledContents(False)
+        self.model_info.setAlignment(QtCore.Qt.AlignCenter)
+        self.model_info.setWordWrap(True)
+        self.model_info.setObjectName("model_info")
         NN2GUI.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(NN2GUI)
         self.statusbar.setObjectName("statusbar")
@@ -492,26 +457,26 @@ class Ui_NN2GUI(object):
     def retranslateUi(self, NN2GUI):
         _translate = QtCore.QCoreApplication.translate
         NN2GUI.setWindowTitle(_translate("NN2GUI", "NN2GUI"))
-        self.load_model.setText(_translate("NN2GUI", "Load Model"))
-        self.model_info.setText(_translate("NN2GUI", "Waiting passionately for a model!"))
-        self.predictions_info.setText(_translate("NN2GUI", "Predictions"))
-        self.predictions.setText(_translate("NN2GUI", "Predictions"))
-        self.input_input.setPlaceholderText(_translate("NN2GUI", "Type Your Input Here ..."))
-        self.load_preprocess_error.setText(_translate("NN2GUI", "Error"))
-        self.label_5.setText(_translate("NN2GUI", "Input"))
         self.framework_type.setItemText(0, _translate("NN2GUI", "TensorFlow"))
         self.framework_type.setItemText(1, _translate("NN2GUI", "PyTorch"))
+        self.label_3.setText(_translate("NN2GUI", "Output Type"))
+        self.label_5.setText(_translate("NN2GUI", "Input"))
         self.output_classes.setText(_translate("NN2GUI", "Change"))
+        self.input_input.setPlaceholderText(_translate("NN2GUI", "Type Your Input Here ..."))
         self.input_type.setItemText(0, _translate("NN2GUI", "Image"))
         self.input_type.setItemText(1, _translate("NN2GUI", "Tabular"))
         self.input_type.setItemText(2, _translate("NN2GUI", "Text"))
         self.input_type.setItemText(3, _translate("NN2GUI", "Video"))
         self.input_type.setItemText(4, _translate("NN2GUI", "3D Image"))
-        self.label.setText(_translate("NN2GUI", "Input Type"))
-        self.load_preprocess.setText(_translate("NN2GUI", "Load Preprocess"))
         self.output_type.setItemText(0, _translate("NN2GUI", "Classification"))
         self.output_type.setItemText(1, _translate("NN2GUI", "Regression"))
-        self.output_classes_label.setText(_translate("NN2GUI", "Output Classes"))
-        self.label_3.setText(_translate("NN2GUI", "Output Type"))
-        self.label_2.setText(_translate("NN2GUI", "Framework"))
+        self.label.setText(_translate("NN2GUI", "Input Type"))
         self.load_input.setText(_translate("NN2GUI", "Load File"))
+        self.load_preprocess.setText(_translate("NN2GUI", "Load Preprocess"))
+        self.output_classes_label.setText(_translate("NN2GUI", "Output Classes"))
+        self.label_2.setText(_translate("NN2GUI", "Framework"))
+        self.load_preprocess_error.setText(_translate("NN2GUI", "Error"))
+        self.predictions.setText(_translate("NN2GUI", "Predictions"))
+        self.predictions_info.setText(_translate("NN2GUI", "Predictions"))
+        self.load_model.setText(_translate("NN2GUI", "Load Model"))
+        self.model_info.setText(_translate("NN2GUI", "Waiting passionately for a model!"))
