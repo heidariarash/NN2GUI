@@ -633,10 +633,10 @@ QPushButton:hover {
     </property>
     <property name="geometry">
      <rect>
-      <x>504</x>
-      <y>263</y>
-      <width>82</width>
-      <height>21</height>
+      <x>480</x>
+      <y>450</y>
+      <width>492</width>
+      <height>251</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -675,9 +675,9 @@ QPushButton:hover {
    <widget class="QLabel" name="predictions_info">
     <property name="geometry">
      <rect>
-      <x>504</x>
-      <y>205</y>
-      <width>139</width>
+      <x>645</x>
+      <y>390</y>
+      <width>160</width>
       <height>34</height>
      </rect>
     </property>
@@ -732,32 +732,13 @@ QPushButton:hover {
      <enum>Qt::Vertical</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="prediction_info_holder">
-    <property name="geometry">
-     <rect>
-      <x>649</x>
-      <y>205</y>
-      <width>16</width>
-      <height>38</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>38</height>
-     </size>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QPushButton" name="load_model">
     <property name="geometry">
      <rect>
-      <x>504</x>
-      <y>134</y>
-      <width>258</width>
-      <height>31</height>
+      <x>625</x>
+      <y>300</y>
+      <width>200</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -779,11 +760,8 @@ QPushButton:hover {
      <string notr="true">QPushButton {
     color: #F5F3F4;
     border: 2px solid #E5383B;
-    border-radius: 15px;
+    border-radius: 20px;
     background-color: #0B090A;
-	margin: 1px;
-	margin-left: 80px;
-	margin-right: 80px;
 }
 
 QPushButton:hover {
@@ -797,10 +775,10 @@ QPushButton:hover {
    <widget class="QLabel" name="model_info">
     <property name="geometry">
      <rect>
-      <x>504</x>
-      <y>16</y>
-      <width>480</width>
-      <height>98</height>
+      <x>480</x>
+      <y>37</y>
+      <width>492</width>
+      <height>121</height>
      </rect>
     </property>
     <property name="sizePolicy">

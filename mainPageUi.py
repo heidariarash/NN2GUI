@@ -350,7 +350,7 @@ class Ui_NN2GUI(object):
         self.load_preprocess_error.setObjectName("load_preprocess_error")
         self.predictions = QtWidgets.QLabel(self.centralwidget)
         self.predictions.setEnabled(True)
-        self.predictions.setGeometry(QtCore.QRect(504, 263, 82, 21))
+        self.predictions.setGeometry(QtCore.QRect(480, 450, 492, 251))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(30)
@@ -369,7 +369,7 @@ class Ui_NN2GUI(object):
         self.predictions.setWordWrap(True)
         self.predictions.setObjectName("predictions")
         self.predictions_info = QtWidgets.QLabel(self.centralwidget)
-        self.predictions_info.setGeometry(QtCore.QRect(504, 205, 139, 34))
+        self.predictions_info.setGeometry(QtCore.QRect(645, 390, 160, 34))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(5)
@@ -395,13 +395,8 @@ class Ui_NN2GUI(object):
         self.line.setFrameShape(QtWidgets.QFrame.VLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
-        self.prediction_info_holder = QtWidgets.QLabel(self.centralwidget)
-        self.prediction_info_holder.setGeometry(QtCore.QRect(649, 205, 16, 38))
-        self.prediction_info_holder.setMinimumSize(QtCore.QSize(0, 38))
-        self.prediction_info_holder.setText("")
-        self.prediction_info_holder.setObjectName("prediction_info_holder")
         self.load_model = QtWidgets.QPushButton(self.centralwidget)
-        self.load_model.setGeometry(QtCore.QRect(504, 134, 258, 31))
+        self.load_model.setGeometry(QtCore.QRect(625, 300, 200, 41))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(5)
@@ -415,11 +410,8 @@ class Ui_NN2GUI(object):
         self.load_model.setStyleSheet("QPushButton {\n"
 "    color: #F5F3F4;\n"
 "    border: 2px solid #E5383B;\n"
-"    border-radius: 15px;\n"
+"    border-radius: 20px;\n"
 "    background-color: #0B090A;\n"
-"    margin: 1px;\n"
-"    margin-left: 80px;\n"
-"    margin-right: 80px;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
@@ -427,7 +419,7 @@ class Ui_NN2GUI(object):
 "}")
         self.load_model.setObjectName("load_model")
         self.model_info = QtWidgets.QLabel(self.centralwidget)
-        self.model_info.setGeometry(QtCore.QRect(504, 16, 480, 98))
+        self.model_info.setGeometry(QtCore.QRect(480, 37, 492, 121))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(40)
