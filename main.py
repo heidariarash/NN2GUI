@@ -46,9 +46,11 @@ class MainWindow(QMainWindow):
         self.ui.input_input.setHidden(True)
         self.ui.load_preprocess_error.setHidden(True)
         self.ui.model_spec.setHidden(True)
+        self.ui.enter_input.setHidden(True)
         #disabling some buttons and inputs
         self.ui.input_input.setDisabled(True)
         self.ui.load_input.setDisabled(True)
+        self.ui.enter_input.setDisabled(True)
         #connecting different signals to slots
         self.ui.output_type.currentTextChanged.connect(self.output_type_changed)
         self.ui.load_preprocess.clicked.connect(self.load_preprocess_clicked)
@@ -100,8 +102,10 @@ class MainWindow(QMainWindow):
         #setting input_input to visible if the type is text and vice versa.
         if value == "Text" or value == "Tabular":
             self.ui.input_input.setHidden(False)
+            self.ui.enter_input.setHidden(False)
         else:
             self.ui.input_input.setHidden(True)
+            self.ui.enter_input.setHidden(True)
 
     def output_classes_clicked(self):
         #opening the new window
