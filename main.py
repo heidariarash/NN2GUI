@@ -45,6 +45,7 @@ class MainWindow(QMainWindow):
         self.ui.predictions.setHidden(True)
         self.ui.input_input.setHidden(True)
         self.ui.load_preprocess_error.setHidden(True)
+        self.ui.model_spec.setHidden(True)
         #disabling some buttons and inputs
         self.ui.input_input.setDisabled(True)
         self.ui.load_input.setDisabled(True)

@@ -34,6 +34,51 @@
    <string notr="true">background-color: rgb(22, 26, 29);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="model_spec">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>170</y>
+      <width>492</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>30</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>MV Boli</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	color: #F5F3F4;
+}</string>
+    </property>
+    <property name="text">
+     <string>Model Specifications</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
    <widget class="QComboBox" name="framework_type">
     <property name="geometry">
      <rect>
@@ -736,7 +781,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>625</x>
-      <y>300</y>
+      <y>310</y>
       <width>200</width>
       <height>41</height>
      </rect>
