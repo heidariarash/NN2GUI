@@ -42,7 +42,7 @@ class MainWindow(QMainWindow):
         QtCore.QTimer.singleShot(100, lambda: self.ui.output_type.setStyleSheet(self.ui.output_type.styleSheet()))
         #setting parts of the GUI in hidden mode
         self.ui.predictions_info.setHidden(True)
-        # self.ui.predictions.setHidden(True)
+        self.ui.predictions.setHidden(True)
         self.ui.input_input.setHidden(True)
         self.ui.load_preprocess_error.setHidden(True)
         #disabling some buttons and inputs
