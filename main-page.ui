@@ -79,6 +79,50 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="enter_input">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>572</y>
+      <width>120</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>15</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial Narrow</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    color: #F5F3F4;
+    border: 2px solid #E5383B;
+    border-radius: 15px;
+    background-color: #0B090A;
+}
+
+QPushButton:hover {
+    background-color: #A4161A;
+}
+
+QPushButton:disabled {
+	background-color: #BA181B;
+}</string>
+    </property>
+    <property name="text">
+     <string>Enter Input</string>
+    </property>
+   </widget>
    <widget class="QComboBox" name="framework_type">
     <property name="geometry">
      <rect>
@@ -255,8 +299,8 @@ QPushButton:hover {
    <widget class="QTextEdit" name="input_input">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>380</y>
+      <x>35</x>
+      <y>375</y>
       <width>380</width>
       <height>192</height>
      </rect>
@@ -639,7 +683,7 @@ QPushButton:hover {
    <widget class="QLabel" name="load_preprocess_error">
     <property name="geometry">
      <rect>
-      <x>40</x>
+      <x>35</x>
       <y>690</y>
       <width>380</width>
       <height>20</height>

@@ -43,6 +43,33 @@ class Ui_NN2GUI(object):
         self.model_spec.setAlignment(QtCore.Qt.AlignHCenter|QtCore.Qt.AlignTop)
         self.model_spec.setWordWrap(True)
         self.model_spec.setObjectName("model_spec")
+        self.enter_input = QtWidgets.QPushButton(self.centralwidget)
+        self.enter_input.setGeometry(QtCore.QRect(170, 572, 120, 30))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(15)
+        sizePolicy.setHeightForWidth(self.enter_input.sizePolicy().hasHeightForWidth())
+        self.enter_input.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        self.enter_input.setFont(font)
+        self.enter_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.enter_input.setStyleSheet("QPushButton {\n"
+"    color: #F5F3F4;\n"
+"    border: 2px solid #E5383B;\n"
+"    border-radius: 15px;\n"
+"    background-color: #0B090A;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #A4161A;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: #BA181B;\n"
+"}")
+        self.enter_input.setObjectName("enter_input")
         self.framework_type = QtWidgets.QComboBox(self.centralwidget)
         self.framework_type.setGeometry(QtCore.QRect(70, 200, 120, 30))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
@@ -137,7 +164,7 @@ class Ui_NN2GUI(object):
 "}")
         self.output_classes.setObjectName("output_classes")
         self.input_input = QtWidgets.QTextEdit(self.centralwidget)
-        self.input_input.setGeometry(QtCore.QRect(40, 380, 380, 192))
+        self.input_input.setGeometry(QtCore.QRect(35, 375, 380, 192))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -350,7 +377,7 @@ class Ui_NN2GUI(object):
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
         self.load_preprocess_error = QtWidgets.QLabel(self.centralwidget)
-        self.load_preprocess_error.setGeometry(QtCore.QRect(40, 690, 380, 20))
+        self.load_preprocess_error.setGeometry(QtCore.QRect(35, 690, 380, 20))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -470,6 +497,7 @@ class Ui_NN2GUI(object):
         _translate = QtCore.QCoreApplication.translate
         NN2GUI.setWindowTitle(_translate("NN2GUI", "NN2GUI"))
         self.model_spec.setText(_translate("NN2GUI", "Model Specifications"))
+        self.enter_input.setText(_translate("NN2GUI", "Enter Input"))
         self.framework_type.setItemText(0, _translate("NN2GUI", "TensorFlow"))
         self.framework_type.setItemText(1, _translate("NN2GUI", "PyTorch"))
         self.label_3.setText(_translate("NN2GUI", "Output Type"))
