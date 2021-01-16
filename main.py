@@ -20,6 +20,7 @@ class ChangeClass(QMainWindow):
         self.ui.cancel.clicked.connect(self.cancle_button_clicked)
         self.ui.ok.clicked.connect(self.ok_button_clicked)
         self.ui.add_class.clicked.connect(self.add_class_button_clicked)
+        self.ui.delete_class.clicked.connect(self.delete_class_button_clicked)
 
     def cancle_button_clicked(self):
         self.close()
@@ -79,6 +80,16 @@ class ChangeClass(QMainWindow):
         self.ui.gridLayout_3.addWidget(eval("self.ui.class" + str(self.num_classes) + "_name"), self.num_classes + 1, 1, 1, 1)
         eval("self.ui.class"+str(self.num_classes)+"_name.setText('Class "+ str(self.num_classes) +"')")
         self.num_classes += 1
+        self.ui.delete_class.setDisabled(False)
+
+    def delete_class_button_clicked(self):
+        self.ui.gridLayout_3.removeWidget(eval("self.ui.class" + str(self.num_classes - 1) + "_name"))
+        self.ui.gridLayout_3.removeWidget(eval("self.ui.class" + str(self.num_classes - 1)))
+        exec("del self.ui.class"+ str(self.num_classes - 1))
+        exec("del self.ui.class"+ str(self.num_classes - 1)+ "_name")
+        self.num_classes -= 1
+        if self.num_classes == 2:
+            self.ui.delete_class.setDisabled(True)
 
 
 class MainWindow(QMainWindow):
