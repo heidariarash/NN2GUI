@@ -23,8 +23,11 @@ class ChangeClass(QMainWindow):
         self.close()
 
     def set_classes(self, classes):
-        self.classes     = classes
-        self.num_classes = len(classes)
+        self.classes      = classes
+        number_of_classes = len(classes) - 2
+        for _ in range(number_of_classes):
+            self.add_class_button_clicked()
+            eval("self.ui.class" + str(self.num_classes -1) + "_name.setText(self.classes[self.num_classes-1])")
         self.ui.class0_name.setText(self.classes[0])
         self.ui.class1_name.setText(self.classes[1])
 
