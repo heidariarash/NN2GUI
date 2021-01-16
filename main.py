@@ -14,6 +14,8 @@ class ChangeClass(QMainWindow):
         #initializing variables
         self.classes     = []
         self.num_classes = 2
+        #disabling some elements
+        self.ui.delete_class.setDisabled(True)
         #connecting different signals to slots
         self.ui.cancel.clicked.connect(self.cancle_button_clicked)
         self.ui.ok.clicked.connect(self.ok_button_clicked)

@@ -14,7 +14,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_ChangeClasses(object):
     def setupUi(self, ChangeClasses):
         ChangeClasses.setObjectName("ChangeClasses")
-        ChangeClasses.resize(345, 380)
+        ChangeClasses.resize(345, 421)
+        ChangeClasses.setMinimumSize(QtCore.QSize(0, 421))
         ChangeClasses.setStyleSheet("background-color: rgb(22, 26, 29);")
         self.centralwidget = QtWidgets.QWidget(ChangeClasses)
         self.centralwidget.setObjectName("centralwidget")
@@ -58,6 +59,60 @@ class Ui_ChangeClasses(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.gridLayout.addWidget(self.label, 0, 0, 1, 2)
+        self.delete_class = QtWidgets.QPushButton(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(10)
+        sizePolicy.setHeightForWidth(self.delete_class.sizePolicy().hasHeightForWidth())
+        self.delete_class.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        self.delete_class.setFont(font)
+        self.delete_class.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.delete_class.setStyleSheet("QPushButton {\n"
+"    color: #F5F3F4;\n"
+"    border: 2px solid #E5383B;\n"
+"    border-radius: 15px;\n"
+"    background-color: #0B090A;\n"
+"    margin-left: 40px;\n"
+"    margin-right: 40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #A4161A;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: #BA181B;\n"
+"}")
+        self.delete_class.setObjectName("delete_class")
+        self.gridLayout.addWidget(self.delete_class, 5, 0, 1, 2)
+        self.cancel = QtWidgets.QPushButton(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(10)
+        sizePolicy.setHeightForWidth(self.cancel.sizePolicy().hasHeightForWidth())
+        self.cancel.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        self.cancel.setFont(font)
+        self.cancel.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.cancel.setStyleSheet("QPushButton {\n"
+"    color: #F5F3F4;\n"
+"    border: 2px solid #E5383B;\n"
+"    border-radius: 15px;\n"
+"    background-color: #0B090A;\n"
+"    margin-left: 20px;\n"
+"    margin-right: 20px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #A4161A;\n"
+"}")
+        self.cancel.setObjectName("cancel")
+        self.gridLayout.addWidget(self.cancel, 6, 1, 1, 1)
         self.add_class = QtWidgets.QPushButton(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -96,28 +151,28 @@ class Ui_ChangeClasses(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 325, 189))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 325, 182))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.gridLayout_3 = QtWidgets.QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_3.setObjectName("gridLayout_3")
-        self.class1 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
+        self.class0 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(30)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.class1.sizePolicy().hasHeightForWidth())
-        self.class1.setSizePolicy(sizePolicy)
-        self.class1.setMinimumSize(QtCore.QSize(50, 50))
-        self.class1.setMaximumSize(QtCore.QSize(50, 50))
+        sizePolicy.setHeightForWidth(self.class0.sizePolicy().hasHeightForWidth())
+        self.class0.setSizePolicy(sizePolicy)
+        self.class0.setMinimumSize(QtCore.QSize(50, 50))
+        self.class0.setMaximumSize(QtCore.QSize(50, 50))
         font = QtGui.QFont()
         font.setFamily("MV Boli")
         font.setPointSize(10)
-        self.class1.setFont(font)
-        self.class1.setStyleSheet("QLabel {\n"
+        self.class0.setFont(font)
+        self.class0.setStyleSheet("QLabel {\n"
 "    color: #F5F3F4;\n"
 "}")
-        self.class1.setAlignment(QtCore.Qt.AlignCenter)
-        self.class1.setObjectName("class1")
-        self.gridLayout_3.addWidget(self.class1, 2, 0, 1, 1)
+        self.class0.setAlignment(QtCore.Qt.AlignCenter)
+        self.class0.setObjectName("class0")
+        self.gridLayout_3.addWidget(self.class0, 0, 0, 1, 1)
         self.class0_name = QtWidgets.QLineEdit(self.scrollAreaWidgetContents)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.MinimumExpanding)
         sizePolicy.setHorizontalStretch(50)
@@ -159,51 +214,26 @@ class Ui_ChangeClasses(object):
         self.class1_name.setAlignment(QtCore.Qt.AlignCenter)
         self.class1_name.setObjectName("class1_name")
         self.gridLayout_3.addWidget(self.class1_name, 2, 1, 1, 1)
-        self.class0 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
+        self.class1 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(30)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.class0.sizePolicy().hasHeightForWidth())
-        self.class0.setSizePolicy(sizePolicy)
-        self.class0.setMinimumSize(QtCore.QSize(50, 50))
-        self.class0.setMaximumSize(QtCore.QSize(50, 50))
+        sizePolicy.setHeightForWidth(self.class1.sizePolicy().hasHeightForWidth())
+        self.class1.setSizePolicy(sizePolicy)
+        self.class1.setMinimumSize(QtCore.QSize(50, 50))
+        self.class1.setMaximumSize(QtCore.QSize(50, 50))
         font = QtGui.QFont()
         font.setFamily("MV Boli")
         font.setPointSize(10)
-        self.class0.setFont(font)
-        self.class0.setStyleSheet("QLabel {\n"
+        self.class1.setFont(font)
+        self.class1.setStyleSheet("QLabel {\n"
 "    color: #F5F3F4;\n"
 "}")
-        self.class0.setAlignment(QtCore.Qt.AlignCenter)
-        self.class0.setObjectName("class0")
-        self.gridLayout_3.addWidget(self.class0, 0, 0, 1, 1)
+        self.class1.setAlignment(QtCore.Qt.AlignCenter)
+        self.class1.setObjectName("class1")
+        self.gridLayout_3.addWidget(self.class1, 2, 0, 1, 1)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.gridLayout.addWidget(self.scrollArea, 4, 0, 1, 2)
-        self.cancel = QtWidgets.QPushButton(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(10)
-        sizePolicy.setHeightForWidth(self.cancel.sizePolicy().hasHeightForWidth())
-        self.cancel.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Arial Narrow")
-        font.setPointSize(11)
-        self.cancel.setFont(font)
-        self.cancel.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.cancel.setStyleSheet("QPushButton {\n"
-"    color: #F5F3F4;\n"
-"    border: 2px solid #E5383B;\n"
-"    border-radius: 15px;\n"
-"    background-color: #0B090A;\n"
-"    margin-left: 20px;\n"
-"    margin-right: 20px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #A4161A;\n"
-"}")
-        self.cancel.setObjectName("cancel")
-        self.gridLayout.addWidget(self.cancel, 6, 1, 1, 1)
         ChangeClasses.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(ChangeClasses)
         self.statusbar.setObjectName("statusbar")
@@ -217,9 +247,10 @@ class Ui_ChangeClasses(object):
         ChangeClasses.setWindowTitle(_translate("ChangeClasses", "Change Output Classes"))
         self.ok.setText(_translate("ChangeClasses", "OK"))
         self.label.setText(_translate("ChangeClasses", "Edit Output Classes Names"))
+        self.delete_class.setText(_translate("ChangeClasses", "Delete A Class"))
+        self.cancel.setText(_translate("ChangeClasses", "Cancel"))
         self.add_class.setText(_translate("ChangeClasses", "Add Another Class"))
-        self.class1.setText(_translate("ChangeClasses", "1"))
+        self.class0.setText(_translate("ChangeClasses", "0"))
         self.class0_name.setText(_translate("ChangeClasses", "Class 0"))
         self.class1_name.setText(_translate("ChangeClasses", "Class 1"))
-        self.class0.setText(_translate("ChangeClasses", "0"))
-        self.cancel.setText(_translate("ChangeClasses", "Cancel"))
+        self.class1.setText(_translate("ChangeClasses", "1"))
