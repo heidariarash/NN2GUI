@@ -12,7 +12,8 @@ class ChangeClass(QMainWindow):
         self.ui = Ui_ChangeClasses()
         self.ui.setupUi(self)
         #initializing variables
-        self.classes = 0
+        self.classes     = []
+        self.num_classes = 2
         #connecting different signals to slots
         self.ui.cancel.clicked.connect(self.cancle_button_clicked)
         self.ui.ok.clicked.connect(self.ok_button_clicked)
@@ -21,11 +22,22 @@ class ChangeClass(QMainWindow):
     def cancle_button_clicked(self):
         self.close()
 
+    def set_classes(self, classes):
+        self.classes     = classes
+        self.num_classes = len(classes)
+        self.ui.class0_name.setText(self.classes[0])
+        self.ui.class1_name.setText(self.classes[1])
+
     def ok_button_clicked(self):
-        self.parent().ui.predictions.setText(str(self.classes))
+        self.classes = []
+        for class_num in range(self.num_classes):
+            self.classes.append(eval("self.ui.class"+str(class_num)+"_name.text()"))
+        self.parent().classes = self.classes
+        self.close()
 
     def add_class_button_clicked(self):
-        self.classes += 1
+        #adding another class
+        pass
 
 
 class MainWindow(QMainWindow):
@@ -36,6 +48,7 @@ class MainWindow(QMainWindow):
         #initializing variables
         self.valid_prep  = False
         self.valid_model = False
+        self.classes     = ["Class 0", "Class 1"]
         #correcting the stylesheets of comboboxes
         QtCore.QTimer.singleShot(100, lambda: self.ui.input_type.setStyleSheet(self.ui.input_type.styleSheet()))
         QtCore.QTimer.singleShot(100, lambda: self.ui.framework_type.setStyleSheet(self.ui.framework_type.styleSheet()))
@@ -111,7 +124,7 @@ class MainWindow(QMainWindow):
         #opening the new window
         window = ChangeClass(parent = self)
         window.setWindowModality(True)
-        # window.classes = 5
+        window.set_classes(self.classes)
         window.show()
 
 
