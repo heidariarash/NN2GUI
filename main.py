@@ -37,7 +37,25 @@ class ChangeClass(QMainWindow):
 
     def add_class_button_clicked(self):
         #adding another class
-        pass
+        # self.ui.class2 = QtWidgets.QLabel(self.ui.scrollAreaWidgetContents)
+        exec("self.ui.class"+str(self.num_classes)+" = QtWidgets.QLabel(self.ui.scrollAreaWidgetContents)")
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(30)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(eval("self.ui.class"+str(self.num_classes)+".sizePolicy().hasHeightForWidth()"))
+        eval("self.ui.class"+str(self.num_classes)+".setSizePolicy(sizePolicy)")
+        eval("self.ui.class"+str(self.num_classes)+".setMinimumSize(QtCore.QSize(50, 50))")
+        eval("self.ui.class"+str(self.num_classes)+".setMaximumSize(QtCore.QSize(50, 50))")
+        font = QtGui.QFont()
+        font.setFamily("MV Boli")
+        font.setPointSize(10)
+        eval("self.ui.class"+str(self.num_classes)+".setFont(font)")
+        eval("self.ui.class"+str(self.num_classes)+".setStyleSheet('color: #F5F3F4;')")
+        eval("self.ui.class"+str(self.num_classes)+".setAlignment(QtCore.Qt.AlignCenter)")
+        eval("self.ui.class"+str(self.num_classes)+".setObjectName('class" + str(self.num_classes) + "')")
+        self.ui.gridLayout_3.addWidget(eval("self.ui.class"+str(self.num_classes)), self.num_classes + 1, 0, 1, 1)
+        eval("self.ui.class"+str(self.num_classes)+".setText('"+ str(self.num_classes) +"')")
+        self.num_classes += 1
 
 
 class MainWindow(QMainWindow):
