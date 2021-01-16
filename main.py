@@ -37,7 +37,6 @@ class ChangeClass(QMainWindow):
 
     def add_class_button_clicked(self):
         #adding another class
-        # self.ui.class2 = QtWidgets.QLabel(self.ui.scrollAreaWidgetContents)
         exec("self.ui.class"+str(self.num_classes)+" = QtWidgets.QLabel(self.ui.scrollAreaWidgetContents)")
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(30)
@@ -55,6 +54,25 @@ class ChangeClass(QMainWindow):
         eval("self.ui.class"+str(self.num_classes)+".setObjectName('class" + str(self.num_classes) + "')")
         self.ui.gridLayout_3.addWidget(eval("self.ui.class"+str(self.num_classes)), self.num_classes + 1, 0, 1, 1)
         eval("self.ui.class"+str(self.num_classes)+".setText('"+ str(self.num_classes) +"')")
+        #adding the textbox
+        exec("self.ui.class"+str(self.num_classes)+"_name = QtWidgets.QLineEdit(self.ui.scrollAreaWidgetContents)")
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(50)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(eval("self.ui.class" + str(self.num_classes) + "_name.sizePolicy().hasHeightForWidth()"))
+        eval("self.ui.class"+str(self.num_classes)+"_name.setSizePolicy(sizePolicy)")
+        eval("self.ui.class"+str(self.num_classes)+"_name.setMinimumSize(QtCore.QSize(50, 50))")
+        eval("self.ui.class"+str(self.num_classes)+"_name.setMaximumSize(QtCore.QSize(50, 50))")
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        font.setUnderline(False)
+        eval("self.ui.class"+str(self.num_classes)+"_name.setFont(font)")
+        eval("self.ui.class"+str(self.num_classes)+"_name.setStyleSheet('border: 0px;color: #F5F3F4;')")
+        eval("self.ui.class"+str(self.num_classes)+"_name.setAlignment(QtCore.Qt.AlignCenter)")
+        eval("self.ui.class"+str(self.num_classes)+".setObjectName('class" + str(self.num_classes) + "_name')")
+        self.ui.gridLayout_3.addWidget(eval("self.ui.class" + str(self.num_classes) + "_name"), self.num_classes + 1, 1, 1, 1)
+        eval("self.ui.class"+str(self.num_classes)+"_name.setText('Class "+ str(self.num_classes) +"')")
         self.num_classes += 1
 
 
