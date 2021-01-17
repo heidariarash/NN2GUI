@@ -12,8 +12,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>0</width>
+    <width>345</width>
     <height>421</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>345</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -46,6 +52,12 @@
         <horstretch>0</horstretch>
         <verstretch>10</verstretch>
        </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>153</width>
+        <height>30</height>
+       </size>
       </property>
       <property name="font">
        <font>
@@ -104,6 +116,18 @@ QPushButton:hover {
         <verstretch>10</verstretch>
        </sizepolicy>
       </property>
+      <property name="minimumSize">
+       <size>
+        <width>325</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>325</width>
+        <height>31</height>
+       </size>
+      </property>
       <property name="font">
        <font>
         <family>Arial Narrow</family>
@@ -144,6 +168,12 @@ QPushButton:disabled {
         <verstretch>10</verstretch>
        </sizepolicy>
       </property>
+      <property name="maximumSize">
+       <size>
+        <width>152</width>
+        <height>30</height>
+       </size>
+      </property>
       <property name="font">
        <font>
         <family>Arial Narrow</family>
@@ -179,6 +209,12 @@ QPushButton:hover {
         <horstretch>0</horstretch>
         <verstretch>10</verstretch>
        </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>325</width>
+        <height>30</height>
+       </size>
       </property>
       <property name="font">
        <font>
@@ -283,19 +319,19 @@ QPushButton:hover {
          <widget class="QLineEdit" name="class0_name">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
-            <horstretch>50</horstretch>
+            <horstretch>100</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
           <property name="minimumSize">
            <size>
-            <width>50</width>
+            <width>100</width>
             <height>50</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>50</width>
+            <width>100</width>
             <height>50</height>
            </size>
           </property>
@@ -325,19 +361,19 @@ QPushButton:hover {
          <widget class="QLineEdit" name="class1_name">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-            <horstretch>50</horstretch>
+            <horstretch>100</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
           <property name="minimumSize">
            <size>
-            <width>50</width>
+            <width>100</width>
             <height>50</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>50</width>
+            <width>100</width>
             <height>50</height>
            </size>
           </property>
