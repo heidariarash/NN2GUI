@@ -410,6 +410,7 @@ class Ui_NN2GUI(object):
         self.predictions.setStyleSheet("QLabel {\n"
 "    color: #F5F3F4;\n"
 "}")
+        self.predictions.setText("")
         self.predictions.setTextFormat(QtCore.Qt.PlainText)
         self.predictions.setScaledContents(False)
         self.predictions.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
@@ -517,7 +518,6 @@ class Ui_NN2GUI(object):
         self.output_classes_label.setText(_translate("NN2GUI", "Output Classes"))
         self.label_2.setText(_translate("NN2GUI", "Framework"))
         self.load_preprocess_error.setText(_translate("NN2GUI", "Error"))
-        self.predictions.setText(_translate("NN2GUI", "Predictions"))
         self.predictions_info.setText(_translate("NN2GUI", "Predictions"))
         self.load_model.setText(_translate("NN2GUI", "Load Model"))
         self.model_info.setText(_translate("NN2GUI", "Waiting passionately for a model!"))

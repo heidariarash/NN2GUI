@@ -746,7 +746,7 @@ QPushButton:hover {
 }</string>
     </property>
     <property name="text">
-     <string>Predictions</string>
+     <string/>
     </property>
     <property name="textFormat">
      <enum>Qt::PlainText</enum>
