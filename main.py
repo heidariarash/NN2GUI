@@ -102,6 +102,7 @@ class MainWindow(QMainWindow):
         #initializing variables
         self.valid_prep  = False
         self.valid_model = False
+        self.framework   = "TensorFlow"
         self.classes     = ["Class 0", "Class 1"]
         #correcting the stylesheets of comboboxes
         QtCore.QTimer.singleShot(100, lambda: self.ui.input_type.setStyleSheet(self.ui.input_type.styleSheet()))
@@ -123,6 +124,7 @@ class MainWindow(QMainWindow):
         self.ui.load_preprocess.clicked.connect(self.load_preprocess_clicked)
         self.ui.input_type.currentTextChanged.connect(self.input_type_changed)
         self.ui.output_classes.clicked.connect(self.output_classes_clicked)
+        self.ui.load_model.clicked.connect(self.load_model_clicked)
 
     def output_type_changed(self, value):
         #hiding the output classes if the output type is regression.
@@ -180,6 +182,14 @@ class MainWindow(QMainWindow):
         window.setWindowModality(True)
         window.set_classes(self.classes)
         window.show()
+
+    def load_model_clicked(self):
+        if not self.valid_model:
+            self.framework = self.ui.framework_type.currentText()
+            print(self.framework)
+
+        else:
+            pass
 
 
 if __name__ == "__main__":
