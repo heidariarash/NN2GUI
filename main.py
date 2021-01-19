@@ -11,6 +11,8 @@ class ChangeClass(QMainWindow):
         super(ChangeClass, self).__init__(parent = parent)
         self.ui = Ui_ChangeClasses()
         self.ui.setupUi(self)
+        #correcting the stylesheets of comboboxes
+        QtCore.QTimer.singleShot(100, lambda: self.ui.scrollArea.setStyleSheet(self.ui.scrollArea.styleSheet()))
         #initializing variables
         self.classes     = []
         self.num_classes = 2

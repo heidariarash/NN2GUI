@@ -108,6 +108,48 @@ QPushButton:hover {
       </property>
      </widget>
     </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QPushButton" name="add_class">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>10</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>325</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial Narrow</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    color: #F5F3F4;
+    border: 2px solid #E5383B;
+    border-radius: 15px;
+    background-color: #0B090A;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+QPushButton:hover {
+    background-color: #A4161A;
+}</string>
+      </property>
+      <property name="text">
+       <string>Add Another Class</string>
+      </property>
+     </widget>
+    </item>
     <item row="5" column="0" colspan="2">
      <widget class="QPushButton" name="delete_class">
       <property name="sizePolicy">
@@ -202,48 +244,6 @@ QPushButton:hover {
       </property>
      </widget>
     </item>
-    <item row="1" column="0" colspan="2">
-     <widget class="QPushButton" name="add_class">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>10</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>325</width>
-        <height>30</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Arial Narrow</family>
-        <pointsize>11</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-    color: #F5F3F4;
-    border: 2px solid #E5383B;
-    border-radius: 15px;
-    background-color: #0B090A;
-	margin-left: 40px;
-	margin-right: 40px;
-}
-
-QPushButton:hover {
-    background-color: #A4161A;
-}</string>
-      </property>
-      <property name="text">
-       <string>Add Another Class</string>
-      </property>
-     </widget>
-    </item>
     <item row="4" column="0" colspan="2">
      <widget class="QScrollArea" name="scrollArea">
       <property name="sizePolicy">
@@ -261,6 +261,39 @@ QPushButton:hover {
       <property name="styleSheet">
        <string notr="true">QScrollArea{
 	border:0px;
+}
+
+QScrollBar:vertical {
+    border-width: 0px;
+    background-color:#0B090A;
+    width: 10px;
+}
+
+QScrollBar::handle:vertical {
+	background-color:#E5383B;
+	border-radius: 4px;	
+	width: 8px;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+ QScrollBar::add-line:vertical {
+    background-color:#0B090A;
+    height: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical {
+     background-color: :#0B090A;
+     height: 0px;
+     subcontrol-position: top;
+     subcontrol-origin: margin;
+}
+
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+      background: none;
 }</string>
       </property>
       <property name="widgetResizable">

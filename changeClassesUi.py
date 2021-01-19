@@ -61,6 +61,32 @@ class Ui_ChangeClasses(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.gridLayout.addWidget(self.label, 0, 0, 1, 2)
+        self.add_class = QtWidgets.QPushButton(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(10)
+        sizePolicy.setHeightForWidth(self.add_class.sizePolicy().hasHeightForWidth())
+        self.add_class.setSizePolicy(sizePolicy)
+        self.add_class.setMaximumSize(QtCore.QSize(325, 30))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        self.add_class.setFont(font)
+        self.add_class.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.add_class.setStyleSheet("QPushButton {\n"
+"    color: #F5F3F4;\n"
+"    border: 2px solid #E5383B;\n"
+"    border-radius: 15px;\n"
+"    background-color: #0B090A;\n"
+"    margin-left: 40px;\n"
+"    margin-right: 40px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #A4161A;\n"
+"}")
+        self.add_class.setObjectName("add_class")
+        self.gridLayout.addWidget(self.add_class, 1, 0, 1, 2)
         self.delete_class = QtWidgets.QPushButton(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -118,32 +144,6 @@ class Ui_ChangeClasses(object):
 "}")
         self.cancel.setObjectName("cancel")
         self.gridLayout.addWidget(self.cancel, 6, 1, 1, 1)
-        self.add_class = QtWidgets.QPushButton(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(10)
-        sizePolicy.setHeightForWidth(self.add_class.sizePolicy().hasHeightForWidth())
-        self.add_class.setSizePolicy(sizePolicy)
-        self.add_class.setMaximumSize(QtCore.QSize(325, 30))
-        font = QtGui.QFont()
-        font.setFamily("Arial Narrow")
-        font.setPointSize(11)
-        self.add_class.setFont(font)
-        self.add_class.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.add_class.setStyleSheet("QPushButton {\n"
-"    color: #F5F3F4;\n"
-"    border: 2px solid #E5383B;\n"
-"    border-radius: 15px;\n"
-"    background-color: #0B090A;\n"
-"    margin-left: 40px;\n"
-"    margin-right: 40px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #A4161A;\n"
-"}")
-        self.add_class.setObjectName("add_class")
-        self.gridLayout.addWidget(self.add_class, 1, 0, 1, 2)
         self.scrollArea = QtWidgets.QScrollArea(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -153,6 +153,39 @@ class Ui_ChangeClasses(object):
         self.scrollArea.setMinimumSize(QtCore.QSize(0, 0))
         self.scrollArea.setStyleSheet("QScrollArea{\n"
 "    border:0px;\n"
+"}\n"
+"\n"
+"QScrollBar:vertical {\n"
+"    border-width: 0px;\n"
+"    background-color:#0B090A;\n"
+"    width: 10px;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical {\n"
+"    background-color:#E5383B;\n"
+"    border-radius: 4px;    \n"
+"    width: 8px;\n"
+"    margin-left: 1px;\n"
+"    margin-right: 1px;\n"
+"}\n"
+"\n"
+" QScrollBar::add-line:vertical {\n"
+"    background-color:#0B090A;\n"
+"    height: 0px;\n"
+"    subcontrol-position: bottom;\n"
+"    subcontrol-origin: margin;\n"
+"}\n"
+"\n"
+"QScrollBar::sub-line:vertical {\n"
+"     background-color: :#0B090A;\n"
+"     height: 0px;\n"
+"     subcontrol-position: top;\n"
+"     subcontrol-origin: margin;\n"
+"}\n"
+"\n"
+"\n"
+"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
+"      background: none;\n"
 "}")
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
@@ -253,9 +286,9 @@ class Ui_ChangeClasses(object):
         ChangeClasses.setWindowTitle(_translate("ChangeClasses", "Change Output Classes"))
         self.ok.setText(_translate("ChangeClasses", "OK"))
         self.label.setText(_translate("ChangeClasses", "Edit Output Classes Names"))
+        self.add_class.setText(_translate("ChangeClasses", "Add Another Class"))
         self.delete_class.setText(_translate("ChangeClasses", "Delete A Class"))
         self.cancel.setText(_translate("ChangeClasses", "Cancel"))
-        self.add_class.setText(_translate("ChangeClasses", "Add Another Class"))
         self.class0.setText(_translate("ChangeClasses", "0"))
         self.class0_name.setText(_translate("ChangeClasses", "Class 0"))
         self.class1_name.setText(_translate("ChangeClasses", "Class 1"))
