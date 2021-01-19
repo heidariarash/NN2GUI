@@ -5,6 +5,7 @@ from PyQt5           import QtWidgets, QtGui, QtCore
 
 import sys
 import importlib.util
+import torch
 
 class ChangeClass(QMainWindow):
     def __init__(self, parent = None):
@@ -102,6 +103,7 @@ class MainWindow(QMainWindow):
         #initializing variables
         self.valid_prep  = False
         self.valid_model = False
+        self.model       = None
         self.framework   = "TensorFlow"
         self.classes     = ["Class 0", "Class 1"]
         #correcting the stylesheets of comboboxes
@@ -110,7 +112,6 @@ class MainWindow(QMainWindow):
         QtCore.QTimer.singleShot(100, lambda: self.ui.output_type.setStyleSheet(self.ui.output_type.styleSheet()))
         #setting parts of the GUI in hidden mode
         self.ui.predictions_info.setHidden(True)
-        self.ui.predictions.setHidden(True)
         self.ui.input_input.setHidden(True)
         self.ui.load_preprocess_error.setHidden(True)
         self.ui.model_spec.setHidden(True)
@@ -138,10 +139,10 @@ class MainWindow(QMainWindow):
     def load_preprocess_clicked(self):
         #checking if there already a preprocess file exists
         if(not self.valid_prep):
-            options = QFileDialog.Options()
+            options     = QFileDialog.Options()
             fileName, _ = QFileDialog.getOpenFileName(self,"Choose Preprocess File","","Python Files (*.py)", options=options)
             try:
-                spec = importlib.util.spec_from_file_location("preprocess", fileName)
+                spec            = importlib.util.spec_from_file_location("preprocess", fileName)
                 self.preprocess = importlib.util.module_from_spec(spec)
                 spec.loader.exec_module(self.preprocess)
                 #when preprocess file is a valid python file but there is no preprocess funtion.
@@ -186,10 +187,36 @@ class MainWindow(QMainWindow):
     def load_model_clicked(self):
         if not self.valid_model:
             self.framework = self.ui.framework_type.currentText()
-            print(self.framework)
+            if self.framework == "PyTorch":
+                options     = QFileDialog.Options()
+                fileName, _ = QFileDialog.getOpenFileName(self,"Choose The Model","","PyTorch Model (*.pt *.pth);;All Files (*)", options=options)
+                try:
+                    self.model       = torch.load(fileName)
+                    self.model.eval()
+                    self.valid_model = True
+                    self.ui.input_input.setDisabled(False)
+                    self.ui.load_input.setDisabled(False)
+                    self.ui.enter_input.setDisabled(False)
+                    self.ui.load_model.setText("Remove Model")
+                    self.ui.model_info.setText("PyTorch Model Loaded Successfully")
+                    self.ui.predictions_info.setHidden(False)
+                    self.ui.model_spec.setHidden(False)
+                    self.ui.predictions.setStyleSheet("color: #F5F3F4")
+                    self.ui.predictions.setText("Ready for Inputs")
+                except:
+                    self.ui.predictions.setStyleSheet("color: #BA181B")
+                    self.ui.predictions.setText("* Something went wrong.")
 
         else:
-            pass
+            self.valid_model = False
+            self.ui.load_model.setText("Load Model")
+            self.ui.predictions.setText("")
+            self.ui.model_info.setText("Waiting passionately for a model!")
+            self.ui.model_spec.setHidden(True)
+            self.ui.input_input.setDisabled(True)
+            self.ui.load_input.setDisabled(True)
+            self.ui.enter_input.setDisabled(True)
+            self.ui.predictions_info.setHidden(True)
 
 
 if __name__ == "__main__":
