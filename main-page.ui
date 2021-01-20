@@ -168,6 +168,10 @@ QComboBox QAbstractItemView {
 	color: #F5F3F4;
 	background-color: #0B090A;
 	border-radius: 5px;
+}
+
+QComboBox:disabled {
+	background-color: #BA181B;
 }</string>
     </property>
     <property name="sizeAdjustPolicy">

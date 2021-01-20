@@ -102,6 +102,10 @@ class Ui_NN2GUI(object):
 "    color: #F5F3F4;\n"
 "    background-color: #0B090A;\n"
 "    border-radius: 5px;\n"
+"}\n"
+"\n"
+"QComboBox:disabled {\n"
+"    background-color: #BA181B;\n"
 "}")
         self.framework_type.setSizeAdjustPolicy(QtWidgets.QComboBox.AdjustToContentsOnFirstShow)
         self.framework_type.setObjectName("framework_type")
