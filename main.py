@@ -1,8 +1,8 @@
-from mainPageUi      import Ui_NN2GUI
-from changeClassesUi import Ui_ChangeClasses
-from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, qApp, QDockWidget, QFileDialog
-from PyQt5           import QtWidgets, QtGui, QtCore
-from utils_nn2gui    import size_utils
+from UIs.mainPageUi      import Ui_NN2GUI
+from UIs.changeClassesUi import Ui_ChangeClasses
+from PyQt5.QtWidgets     import QDialog, QApplication, QMainWindow, qApp, QDockWidget, QFileDialog
+from PyQt5               import QtWidgets, QtGui, QtCore
+from utils_nn2gui        import size_utils
 
 import sys
 import os
