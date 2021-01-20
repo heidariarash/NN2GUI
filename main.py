@@ -2,8 +2,10 @@ from mainPageUi      import Ui_NN2GUI
 from changeClassesUi import Ui_ChangeClasses
 from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow, qApp, QDockWidget, QFileDialog
 from PyQt5           import QtWidgets, QtGui, QtCore
+from utils_nn2gui    import size_utils
 
 import sys
+import os
 import importlib.util
 import torch
 # import tensorflow as tf
@@ -193,6 +195,9 @@ class MainWindow(QMainWindow):
             if self.framework == "PyTorch":
                 options     = QFileDialog.Options()
                 fileName, _ = QFileDialog.getOpenFileName(self,"Choose The Model","","PyTorch Model (*.pt *.pth);;All Files (*)", options=options)
+                if not fileName:
+                    return
+
                 try:
                     self.model       = torch.load(fileName)
                     self.model.eval()
@@ -204,6 +209,7 @@ class MainWindow(QMainWindow):
                     self.ui.model_info.setText("PyTorch Model Loaded Successfully")
                     self.ui.predictions_info.setHidden(False)
                     self.ui.model_spec.setHidden(False)
+                    self.ui.model_spec.setText("Model Size:  " + str(round(os.stat(fileName).st_size/(1024*1024),2)) + " MB")
                     self.ui.predictions.setStyleSheet("color: #F5F3F4")
                     self.ui.predictions.setText("Ready for Inputs")
                     self.ui.framework_type.setDisabled(True)
@@ -215,8 +221,15 @@ class MainWindow(QMainWindow):
             elif self.framework == "TensorFlow":
                 options     = QFileDialog.Options()
                 fileName, _ = QFileDialog.getOpenFileName(self,"Choose The Model","","TensorFlow Model (*.pb);;Keras Model (*.h5);;All Files (*)", options=options)
+                if not fileName:
+                    return
+
                 if fileName.endswith(".pb"):
                     fileName = "/".join(fileName.split("/")[:-1])
+                    size = size_utils.get_size(fileName)
+                else:
+                    size = os.stat(fileName).st_size
+
                 try:
                     # self.model = tf.keras.models.load_model(fileName)
                     self.valid_model = True
@@ -227,6 +240,7 @@ class MainWindow(QMainWindow):
                     self.ui.model_info.setText("TensorFlow Model Loaded Successfully")
                     self.ui.predictions_info.setHidden(False)
                     self.ui.model_spec.setHidden(False)
+                    self.ui.model_spec.setText("Model Size:  " + str(round(size/(1024*1024),2)) + " MB")
                     self.ui.predictions.setStyleSheet("color: #F5F3F4")
                     self.ui.predictions.setText("Ready for Inputs")
                     self.ui.framework_type.setDisabled(True)
