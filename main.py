@@ -6,6 +6,7 @@ from PyQt5           import QtWidgets, QtGui, QtCore
 import sys
 import importlib.util
 import torch
+# import tensorflow as tf
 
 class ChangeClass(QMainWindow):
     def __init__(self, parent = None):
@@ -187,6 +188,8 @@ class MainWindow(QMainWindow):
     def load_model_clicked(self):
         if not self.valid_model:
             self.framework = self.ui.framework_type.currentText()
+
+            #PyTorch Case
             if self.framework == "PyTorch":
                 options     = QFileDialog.Options()
                 fileName, _ = QFileDialog.getOpenFileName(self,"Choose The Model","","PyTorch Model (*.pt *.pth);;All Files (*)", options=options)
@@ -203,12 +206,38 @@ class MainWindow(QMainWindow):
                     self.ui.model_spec.setHidden(False)
                     self.ui.predictions.setStyleSheet("color: #F5F3F4")
                     self.ui.predictions.setText("Ready for Inputs")
+                    self.ui.framework_type.setDisabled(True)
                 except:
                     self.ui.predictions.setStyleSheet("color: #BA181B")
                     self.ui.predictions.setText("* Something went wrong.")
 
+            #TensorFlow Case
+            elif self.framework == "TensorFlow":
+                options     = QFileDialog.Options()
+                fileName, _ = QFileDialog.getOpenFileName(self,"Choose The Model","","TensorFlow Model (*.pb);;Keras Model (*.h5);;All Files (*)", options=options)
+                if fileName.endswith(".pb"):
+                    fileName = "/".join(fileName.split("/")[:-1])
+                try:
+                    # self.model = tf.keras.models.load_model(fileName)
+                    self.valid_model = True
+                    self.ui.input_input.setDisabled(False)
+                    self.ui.load_input.setDisabled(False)
+                    self.ui.enter_input.setDisabled(False)
+                    self.ui.load_model.setText("Remove Model")
+                    self.ui.model_info.setText("TensorFlow Model Loaded Successfully")
+                    self.ui.predictions_info.setHidden(False)
+                    self.ui.model_spec.setHidden(False)
+                    self.ui.predictions.setStyleSheet("color: #F5F3F4")
+                    self.ui.predictions.setText("Ready for Inputs")
+                    self.ui.framework_type.setDisabled(True)
+                except:
+                    self.ui.predictions.setStyleSheet("color: #BA181B")
+                    self.ui.predictions.setText("* Something went wrong.")
+
+        #Remove Model Case
         else:
             self.valid_model = False
+            self.model       = None
             self.ui.load_model.setText("Load Model")
             self.ui.predictions.setText("")
             self.ui.model_info.setText("Waiting passionately for a model!")
@@ -217,6 +246,7 @@ class MainWindow(QMainWindow):
             self.ui.load_input.setDisabled(True)
             self.ui.enter_input.setDisabled(True)
             self.ui.predictions_info.setHidden(True)
+            self.ui.framework_type.setDisabled(False)
 
 
 if __name__ == "__main__":
