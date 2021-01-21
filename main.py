@@ -266,8 +266,8 @@ class MainWindow(QMainWindow):
 
     def load_input_clicked(self):
         input_type = self.ui.input_type.currentText()
-        data       = load_input_utils.get_file(input_type)
-        if not fileName:
+        data       = load_input_utils.get_file(input_type, self)
+        if not data:
             return
         
         if self.valid_prep:
@@ -275,7 +275,7 @@ class MainWindow(QMainWindow):
         else:
             if input_type == "Other":
                 self.ui.predictions.setText("* For other data types you must provide a preprocess file.")
-                self.ui.predictions.setStyleSheet("color: #F5F3F4")
+                self.ui.predictions.setStyleSheet("color: #BA181B")
                 return
             data = load_input_utils.preprocess_file(data, input_type)
 
