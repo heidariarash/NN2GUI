@@ -425,12 +425,7 @@ QComboBox QAbstractItemView {
     </item>
     <item>
      <property name="text">
-      <string>Video</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>3D Image</string>
+      <string>Other</string>
      </property>
     </item>
    </widget>
