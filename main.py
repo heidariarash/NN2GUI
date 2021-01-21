@@ -273,6 +273,10 @@ class MainWindow(QMainWindow):
         if self.valid_prep:
             data = self.preprocess.preprocess(data)
         else:
+            if input_type == "Other":
+                self.ui.predictions.setText("* For other data types you must provide a preprocess file.")
+                self.ui.predictions.setStyleSheet("color: #F5F3F4")
+                return
             data = load_input_utils.preprocess_file(data, input_type)
 
 
