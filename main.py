@@ -129,6 +129,7 @@ class MainWindow(QMainWindow):
         self.ui.input_type.currentTextChanged.connect(self.input_type_changed)
         self.ui.output_classes.clicked.connect(self.output_classes_clicked)
         self.ui.load_model.clicked.connect(self.load_model_clicked)
+        self.ui.load_input.clicked.connect(self.load_input_clicked)
 
     def output_type_changed(self, value):
         #hiding the output classes if the output type is regression.
@@ -261,6 +262,26 @@ class MainWindow(QMainWindow):
             self.ui.enter_input.setDisabled(True)
             self.ui.predictions_info.setHidden(True)
             self.ui.framework_type.setDisabled(False)
+
+    def load_input_clicked(self):
+        input_type = self.ui.input_type.currentText()
+        if self.valid_prep:
+            if self.framework == "PyTorch":
+                pass
+            elif self.framework == "TensorFlow":
+                pass
+            return
+
+        if input_type == "Image":
+            pass
+        elif input_type == "Tabular":
+            pass
+        elif input_type == "Text":
+            pass
+        elif input_type == "Video":
+            pass
+        elif input_type == "3D Image":
+            pass
 
 
 if __name__ == "__main__":
