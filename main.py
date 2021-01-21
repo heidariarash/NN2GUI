@@ -2,7 +2,7 @@ from UIs.mainPageUi      import Ui_NN2GUI
 from UIs.changeClassesUi import Ui_ChangeClasses
 from PyQt5.QtWidgets     import QDialog, QApplication, QMainWindow, qApp, QDockWidget, QFileDialog
 from PyQt5               import QtWidgets, QtGui, QtCore
-from utils_nn2gui        import size_utils
+from utils_nn2gui        import size_utils, load_input_utils
 
 import sys
 import os
@@ -107,6 +107,7 @@ class MainWindow(QMainWindow):
         self.valid_prep  = False
         self.valid_model = False
         self.model       = None
+        self.preprocess  = None
         self.framework   = "TensorFlow"
         self.classes     = ["Class 0", "Class 1"]
         #correcting the stylesheets of comboboxes
@@ -265,23 +266,14 @@ class MainWindow(QMainWindow):
 
     def load_input_clicked(self):
         input_type = self.ui.input_type.currentText()
-        if self.valid_prep:
-            if self.framework == "PyTorch":
-                pass
-            elif self.framework == "TensorFlow":
-                pass
+        data       = load_input_utils.get_file(input_type)
+        if not fileName:
             return
-
-        if input_type == "Image":
-            pass
-        elif input_type == "Tabular":
-            pass
-        elif input_type == "Text":
-            pass
-        elif input_type == "Video":
-            pass
-        elif input_type == "3D Image":
-            pass
+        
+        if self.valid_prep:
+            data = self.preprocess.preprocess(data)
+        else:
+            data = load_input_utils.preprocess_file(data, input_type)
 
 
 if __name__ == "__main__":
