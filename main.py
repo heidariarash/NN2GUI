@@ -292,19 +292,20 @@ class MainWindow(QMainWindow):
         input_type = self.ui.input_type.currentText()
         data       = self.ui.input_input.toPlainText()
         if self.valid_prep:
-            data = self.preprocess.preprocess(data, False)
+            data   = self.preprocess.preprocess(data, False)
+        else:
+            if input_type == "Tabular":
+                self.ui.predictions.setText("* For tabular data you must provide a preprocess file, if you want to enter the data manually.")
+                self.ui.predictions.setStyleSheet("color: #BA181B")
+                return
 
-        if input_type == "Text":
-            if self.framework == "PyTorch":
-                prediction = self.model(data)
-            elif self.framework == "TensorFlow":
-                # prediction = self.model.predict(data)
-                pass
+        if self.framework == "PyTorch":
+            prediction = self.model(data)
+        elif self.framework == "TensorFlow":
+            # prediction = self.model.predict(data)
+            pass
             
-            #updating the predictions based on the predictions and output type
-        
-        elif input_type == "Tabular":
-
+        #updating the predictions based on the predictions and output type
 
 
 if __name__ == "__main__":
