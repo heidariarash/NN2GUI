@@ -131,6 +131,7 @@ class MainWindow(QMainWindow):
         self.ui.output_classes.clicked.connect(self.output_classes_clicked)
         self.ui.load_model.clicked.connect(self.load_model_clicked)
         self.ui.load_input.clicked.connect(self.load_input_clicked)
+        self.ui.enter_input.clicked.connect(self.enter_input_clicked)
 
     def output_type_changed(self, value):
         #hiding the output classes if the output type is regression.
@@ -286,6 +287,9 @@ class MainWindow(QMainWindow):
             pass
 
         #updating the predictions based on the predictions and output type
+
+    def enter_input_clicked(self):
+        pass
 
 
 if __name__ == "__main__":
