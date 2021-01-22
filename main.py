@@ -279,6 +279,14 @@ class MainWindow(QMainWindow):
                 return
             data = load_input_utils.preprocess_file(data, input_type)
 
+        if self.framework == "PyTorch":
+            prediction = self.model(data)
+        elif self.framework == "TensorFlow":
+            # prediction = self.model.predict(data)
+            pass
+
+        #updating the predictions based on the predictions and output type
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
