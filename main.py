@@ -272,7 +272,12 @@ class MainWindow(QMainWindow):
             return
         
         if self.valid_prep:
-            data = self.preprocess.preprocess(data, True)
+            try:
+                data = self.preprocess.preprocess(data, True)
+            except:
+                self.ui.predictions.setText("* Something went wrong with the preprocess file. There might be a bug.")
+                self.ui.predictions.setStyleSheet("color: #BA181B")
+                return
         else:
             if input_type == "Other":
                 self.ui.predictions.setText("* For other data types you must provide a preprocess file.")
@@ -292,7 +297,12 @@ class MainWindow(QMainWindow):
         input_type = self.ui.input_type.currentText()
         data       = self.ui.input_input.toPlainText()
         if self.valid_prep:
-            data   = self.preprocess.preprocess(data, False)
+            try:
+                data = self.preprocess.preprocess(data, False)
+            except:
+                self.ui.predictions.setText("* Something went wrong with the preprocess file. There might be a bug.")
+                self.ui.predictions.setStyleSheet("color: #BA181B")
+                return
         else:
             if input_type == "Tabular":
                 self.ui.predictions.setText("* For tabular data you must provide a preprocess file, if you want to enter the data manually.")
