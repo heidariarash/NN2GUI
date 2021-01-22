@@ -272,7 +272,7 @@ class MainWindow(QMainWindow):
             return
         
         if self.valid_prep:
-            data = self.preprocess.preprocess(data)
+            data = self.preprocess.preprocess(data, True)
         else:
             if input_type == "Other":
                 self.ui.predictions.setText("* For other data types you must provide a preprocess file.")
@@ -289,7 +289,22 @@ class MainWindow(QMainWindow):
         #updating the predictions based on the predictions and output type
 
     def enter_input_clicked(self):
-        pass
+        input_type = self.ui.input_type.currentText()
+        data       = self.ui.input_input.toPlainText()
+        if self.valid_prep:
+            data = self.preprocess.preprocess(data, False)
+
+        if input_type == "Text":
+            if self.framework == "PyTorch":
+                prediction = self.model(data)
+            elif self.framework == "TensorFlow":
+                # prediction = self.model.predict(data)
+                pass
+            
+            #updating the predictions based on the predictions and output type
+        
+        elif input_type == "Tabular":
+
 
 
 if __name__ == "__main__":
