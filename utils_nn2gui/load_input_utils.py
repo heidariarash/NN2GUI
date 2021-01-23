@@ -2,7 +2,8 @@ from PyQt5.QtWidgets        import QFileDialog
 from PIL                    import Image
 from torchvision.transforms import ToTensor
 
-import pandas as pd
+import pandas     as pd
+import tensorflow as tf
 import torch
 
 def get_file(input_type, parent):
@@ -33,7 +34,7 @@ def preprocess_file(data, input_type, framework):
         if framework == "PyTorch":
             data = ToTensor(data)
         elif framework == "TensorFlow":
-            #remember to convert
+            data = tf.keras.preprocessing.image.img_to_array(data)
             pass
         return data
 
@@ -42,6 +43,6 @@ def preprocess_file(data, input_type, framework):
         if framework == "PyTorch":
             data = torch.Tensor(data.values)
         elif framework == "TensorFlow":
-            #remember to convert
+            data = data.values
             pass
         return data
