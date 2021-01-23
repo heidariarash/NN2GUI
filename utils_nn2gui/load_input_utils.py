@@ -1,7 +1,9 @@
-from PyQt5.QtWidgets import QFileDialog
-from PIL             import Image
+from PyQt5.QtWidgets        import QFileDialog
+from PIL                    import Image
+from torchvision.transforms import ToTensor
 
 import pandas as pd
+import torch
 
 def get_file(input_type, parent):
     if input_type == "Image":
@@ -25,19 +27,21 @@ def get_file(input_type, parent):
         return fileName
 
 
-def preprocess_file(data, input_type):
+def preprocess_file(data, input_type, framework):
     if input_type == "Image":
         data = Image.open(data)
-        # converting to tensor here
+        if framework == "PyTorch":
+            data = ToTensor(data)
+        elif framework == "TensorFlow":
+            #remember to convert
+            pass
         return data
 
     elif input_type == "Tabular":
         data = pd.read_csv(data)
-        #convert to tensor here
-        return data
-
-    elif input_type == "Text":
-        with open(data) as f:
-            data = f.read()
-        #convert to tensor here
+        if framework == "PyTorch":
+            data = torch.Tensor(data.values)
+        elif framework == "TensorFlow":
+            #remember to convert
+            pass
         return data

@@ -9,6 +9,7 @@ import os
 import importlib.util
 import torch
 import tensorflow as tf
+import pandas     as pd
 
 class ChangeClass(QMainWindow):
     def __init__(self, parent = None):
@@ -279,11 +280,11 @@ class MainWindow(QMainWindow):
                 self.ui.predictions.setStyleSheet("color: #BA181B")
                 return
         else:
-            if input_type == "Other":
-                self.ui.predictions.setText("* For other data types you must provide a preprocess file.")
+            if input_type == "Other" or input_type == "Text":
+                self.ui.predictions.setText("* For other  and text data types you must provide a preprocess file.")
                 self.ui.predictions.setStyleSheet("color: #BA181B")
                 return
-            data = load_input_utils.preprocess_file(data, input_type)
+            data = load_input_utils.preprocess_file(data, input_type, self.framework)
 
         if self.framework == "PyTorch":
             try:
@@ -313,10 +314,9 @@ class MainWindow(QMainWindow):
                 self.ui.predictions.setStyleSheet("color: #BA181B")
                 return
         else:
-            if input_type == "Tabular":
-                self.ui.predictions.setText("* For tabular data you must provide a preprocess file, if you want to enter the data manually.")
-                self.ui.predictions.setStyleSheet("color: #BA181B")
-                return
+            self.ui.predictions.setText("* You must provide a preprocess file, in case you want to enter the input manually.")
+            self.ui.predictions.setStyleSheet("color: #BA181B")
+            return
 
         if self.framework == "PyTorch":
             try:
