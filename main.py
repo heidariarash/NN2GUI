@@ -8,7 +8,7 @@ import sys
 import os
 import importlib.util
 import torch
-# import tensorflow as tf
+import tensorflow as tf
 
 class ChangeClass(QMainWindow):
     def __init__(self, parent = None):
@@ -234,7 +234,7 @@ class MainWindow(QMainWindow):
                     size = os.stat(fileName).st_size
 
                 try:
-                    # self.model = tf.keras.models.load_model(fileName)
+                    self.model = tf.keras.models.load_model(fileName)
                     self.valid_model = True
                     self.ui.input_input.setDisabled(False)
                     self.ui.load_input.setDisabled(False)
@@ -288,8 +288,7 @@ class MainWindow(QMainWindow):
         if self.framework == "PyTorch":
             prediction = self.model(data)
         elif self.framework == "TensorFlow":
-            # prediction = self.model.predict(data)
-            pass
+            prediction = self.model.predict(data)
 
         #updating the predictions based on the predictions and output type
 
@@ -312,8 +311,7 @@ class MainWindow(QMainWindow):
         if self.framework == "PyTorch":
             prediction = self.model(data)
         elif self.framework == "TensorFlow":
-            # prediction = self.model.predict(data)
-            pass
+            prediction = self.model.predict(data)
             
         #updating the predictions based on the predictions and output type
 
