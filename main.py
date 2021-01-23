@@ -286,9 +286,19 @@ class MainWindow(QMainWindow):
             data = load_input_utils.preprocess_file(data, input_type)
 
         if self.framework == "PyTorch":
-            prediction = self.model(data)
+            try:
+                prediction = self.model(data)
+            except:
+                self.ui.predictions.setText("* Something went wrong when predicting. It might be an inconsistency between your input data and your model input. Or there is something wrong in your model.")
+                self.ui.predictions.setStyleSheet("color: #BA181B")
+                return
         elif self.framework == "TensorFlow":
-            prediction = self.model.predict(data)
+            try:
+                prediction = self.model.predict(data)
+            except:
+                self.ui.predictions.setText("* Something went wrong when predicting. It might be an inconsistency between your input data and your model input. Or there is something wrong in your model.")
+                self.ui.predictions.setStyleSheet("color: #BA181B")
+                return
 
         #updating the predictions based on the predictions and output type
 
