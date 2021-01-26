@@ -35,14 +35,12 @@ def preprocess_file(data, input_type, framework):
             data = ToTensor(data)
         elif framework == "TensorFlow":
             data = tf.keras.preprocessing.image.img_to_array(data)
-            pass
         return data
 
     elif input_type == "Tabular":
-        data = pd.read_csv(data)
+        data = pd.read_csv(data, header=None)
         if framework == "PyTorch":
             data = torch.Tensor(data.values)
         elif framework == "TensorFlow":
             data = data.values
-            pass
         return data
