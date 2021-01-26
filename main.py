@@ -303,7 +303,10 @@ class MainWindow(QMainWindow):
 
         output_type = self.ui.output_type.currentText()
         if output_type == "Regression":
-            self.ui.predictions.setText("Output: " + str(prediction).lstrip("[").rstrip(']'))
+            self.ui.predictions.setText("Predictions are as follows: \n")
+            for index, pred in enumerate(prediction):
+                self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": " + str(pred).lstrip("[").rstrip(']') + "\n")
+            self.ui.predictions.setStyleSheet("color: #F5F3F4")
             self.ui.predictions.setStyleSheet("color: #F5F3F4")
         elif output_type == "Classification":
             pass
@@ -340,7 +343,9 @@ class MainWindow(QMainWindow):
             
         output_type = self.ui.output_type.currentText()
         if output_type == "Regression":
-            self.ui.predictions.setText("Output: " + str(prediction).lstrip("[").rstrip(']'))
+            self.ui.predictions.setText("Predictions are as follows: \n")
+            for index, pred in enumerate(prediction):
+                self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": " + str(pred).lstrip("[").rstrip(']') + "\n")
             self.ui.predictions.setStyleSheet("color: #F5F3F4")
         elif output_type == "Classification":
             pass
