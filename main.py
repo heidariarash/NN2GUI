@@ -301,7 +301,12 @@ class MainWindow(QMainWindow):
                 self.ui.predictions.setStyleSheet("color: #BA181B")
                 return
 
-        #updating the predictions based on the predictions and output type
+        output_type = self.ui.output_type.currentText()
+        if output_type == "Regression":
+            self.ui.predictions.setText("Output: " + str(prediction).lstrip("[").rstrip(']'))
+            self.ui.predictions.setStyleSheet("color: #F5F3F4")
+        elif output_type == "Classification":
+            pass
 
     def enter_input_clicked(self):
         input_type = self.ui.input_type.currentText()
@@ -333,7 +338,12 @@ class MainWindow(QMainWindow):
                 self.ui.predictions.setStyleSheet("color: #BA181B")
                 return
             
-        #updating the predictions based on the predictions and output type
+        output_type = self.ui.output_type.currentText()
+        if output_type == "Regression":
+            self.ui.predictions.setText("Output: " + str(prediction).lstrip("[").rstrip(']'))
+            self.ui.predictions.setStyleSheet("color: #F5F3F4")
+        elif output_type == "Classification":
+            pass
 
 
 if __name__ == "__main__":
