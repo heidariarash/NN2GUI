@@ -3,6 +3,7 @@ from PIL                    import Image
 from torchvision.transforms import ToTensor
 
 import pandas     as pd
+import numpy      as np
 import tensorflow as tf
 import torch
 
@@ -35,7 +36,7 @@ def preprocess_file(data, input_type, framework):
             data = ToTensor(data)
         elif framework == "TensorFlow":
             data = tf.keras.preprocessing.image.img_to_array(data)
-        return data
+        return np.expand_dims(data, 0)
 
     elif input_type == "Tabular":
         data = pd.read_csv(data, header=None)
