@@ -304,6 +304,8 @@ class MainWindow(QMainWindow):
         output_type = self.ui.output_type.currentText()
         if output_type == "Regression":
             self.ui.predictions.setText("Predictions are as follows: \n")
+            if self.framework == "PyTorch":
+                prediction = prediction.detach().numpy()
             for index, pred in enumerate(prediction):
                 self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": " + str(pred).lstrip("[").rstrip(']') + "\n")
             self.ui.predictions.setStyleSheet("color: #F5F3F4")
@@ -344,6 +346,8 @@ class MainWindow(QMainWindow):
         output_type = self.ui.output_type.currentText()
         if output_type == "Regression":
             self.ui.predictions.setText("Predictions are as follows: \n")
+            if self.framework == "PyTorch":
+                prediction = prediction.item()
             for index, pred in enumerate(prediction):
                 self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": " + str(pred).lstrip("[").rstrip(']') + "\n")
             self.ui.predictions.setStyleSheet("color: #F5F3F4")
