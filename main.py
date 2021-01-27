@@ -306,11 +306,10 @@ class MainWindow(QMainWindow):
         self.ui.predictions.setText("Predictions are as follows: \n")
         if self.framework == "PyTorch":
             prediction = prediction.detach().numpy()
+        self.ui.predictions.setStyleSheet("color: #F5F3F4")
         if output_type == "Regression":
             for index, pred in enumerate(prediction):
                 self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": " + str(pred).lstrip("[").rstrip(']') + "\n")
-            self.ui.predictions.setStyleSheet("color: #F5F3F4")
-            self.ui.predictions.setStyleSheet("color: #F5F3F4")
         elif output_type == "Classification":
             for index, pred in enumerate(prediction):
                 try:
@@ -352,10 +351,10 @@ class MainWindow(QMainWindow):
         self.ui.predictions.setText("Predictions are as follows: \n")
         if self.framework == "PyTorch":
             prediction = prediction.item()
+        self.ui.predictions.setStyleSheet("color: #F5F3F4")
         if output_type == "Regression":
             for index, pred in enumerate(prediction):
                 self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": " + str(pred).lstrip("[").rstrip(']') + "\n")
-            self.ui.predictions.setStyleSheet("color: #F5F3F4")
         elif output_type == "Classification":
             for index, pred in enumerate(prediction):
                 try:
