@@ -10,6 +10,7 @@ import importlib.util
 import torch
 import tensorflow as tf
 import pandas     as pd
+import numpy      as np
 
 class ChangeClass(QMainWindow):
     def __init__(self, parent = None):
@@ -302,16 +303,20 @@ class MainWindow(QMainWindow):
                 return
 
         output_type = self.ui.output_type.currentText()
+        self.ui.predictions.setText("Predictions are as follows: \n")
+        if self.framework == "PyTorch":
+            prediction = prediction.detach().numpy()
         if output_type == "Regression":
-            self.ui.predictions.setText("Predictions are as follows: \n")
-            if self.framework == "PyTorch":
-                prediction = prediction.detach().numpy()
             for index, pred in enumerate(prediction):
                 self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": " + str(pred).lstrip("[").rstrip(']') + "\n")
             self.ui.predictions.setStyleSheet("color: #F5F3F4")
             self.ui.predictions.setStyleSheet("color: #F5F3F4")
         elif output_type == "Classification":
-            pass
+            for index, pred in enumerate(prediction):
+                try:
+                    self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": " + self.classes[np.argmax(pred)] + "\n")
+                except:
+                    self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": Class " + str(np.argmax(pred)) + "\n")
 
     def enter_input_clicked(self):
         input_type = self.ui.input_type.currentText()
@@ -344,16 +349,19 @@ class MainWindow(QMainWindow):
                 return
             
         output_type = self.ui.output_type.currentText()
+        self.ui.predictions.setText("Predictions are as follows: \n")
+        if self.framework == "PyTorch":
+            prediction = prediction.item()
         if output_type == "Regression":
-            self.ui.predictions.setText("Predictions are as follows: \n")
-            if self.framework == "PyTorch":
-                prediction = prediction.item()
             for index, pred in enumerate(prediction):
                 self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": " + str(pred).lstrip("[").rstrip(']') + "\n")
             self.ui.predictions.setStyleSheet("color: #F5F3F4")
         elif output_type == "Classification":
-            pass
-
+            for index, pred in enumerate(prediction):
+                try:
+                    self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": " + self.classes[np.argmax(pred)] + "\n")
+                except:
+                    self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": Class " + str(np.argmax(pred)) + "\n")
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
