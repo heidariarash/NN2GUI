@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets        import QFileDialog
 from PIL                    import Image
-from torchvision.transforms import ToTensor
+from torchvision.transforms import ToTensor, Compose
 
 import pandas     as pd
 import numpy      as np
@@ -33,10 +33,13 @@ def preprocess_file(data, input_type, framework):
     if input_type == "Image":
         data = Image.open(data)
         if framework == "PyTorch":
-            data = ToTensor(data)
-        elif framework == "TensorFlow":
+            transform = Compose([ToTensor()])
+            data = transform(data)
+            data = torch.unsqueeze(data, 0)
+            return data
+        if framework == "TensorFlow":
             data = tf.keras.preprocessing.image.img_to_array(data)
-        return np.expand_dims(data, 0)
+            return np.expand_dims(data, 0)
 
     elif input_type == "Tabular":
         data = pd.read_csv(data, header=None)
