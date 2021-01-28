@@ -145,7 +145,7 @@ class Ui_NN2GUI(object):
         self.label_5.setAlignment(QtCore.Qt.AlignCenter)
         self.label_5.setObjectName("label_5")
         self.output_classes = QtWidgets.QPushButton(self.centralwidget)
-        self.output_classes.setGeometry(QtCore.QRect(270, 200, 120, 30))
+        self.output_classes.setGeometry(QtCore.QRect(260, 200, 91, 30))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(15)
@@ -489,6 +489,33 @@ class Ui_NN2GUI(object):
         self.model_info.setAlignment(QtCore.Qt.AlignCenter)
         self.model_info.setWordWrap(True)
         self.model_info.setObjectName("model_info")
+        self.load_classes = QtWidgets.QPushButton(self.centralwidget)
+        self.load_classes.setGeometry(QtCore.QRect(360, 200, 41, 30))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(15)
+        sizePolicy.setHeightForWidth(self.load_classes.sizePolicy().hasHeightForWidth())
+        self.load_classes.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(11)
+        self.load_classes.setFont(font)
+        self.load_classes.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.load_classes.setStyleSheet("QPushButton {\n"
+"    color: #F5F3F4;\n"
+"    border: 2px solid #E5383B;\n"
+"    border-radius: 15px;\n"
+"    background-color: #0B090A;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    background-color: #A4161A;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    background-color: #BA181B;\n"
+"}")
+        self.load_classes.setObjectName("load_classes")
         NN2GUI.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(NN2GUI)
         self.statusbar.setObjectName("statusbar")
@@ -523,3 +550,4 @@ class Ui_NN2GUI(object):
         self.predictions_info.setText(_translate("NN2GUI", "Predictions"))
         self.load_model.setText(_translate("NN2GUI", "Load Model"))
         self.model_info.setText(_translate("NN2GUI", "Waiting passionately for a model!"))
+        self.load_classes.setText(_translate("NN2GUI", " ▲"))
