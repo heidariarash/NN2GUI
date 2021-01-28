@@ -122,6 +122,7 @@ class MainWindow(QMainWindow):
         self.ui.load_preprocess_error.setHidden(True)
         self.ui.model_spec.setHidden(True)
         self.ui.enter_input.setHidden(True)
+        self.ui.load_classes_error.setHidden(True)
         #disabling some buttons and inputs
         self.ui.input_input.setDisabled(True)
         self.ui.load_input.setDisabled(True)
@@ -140,9 +141,11 @@ class MainWindow(QMainWindow):
         if(value == "Regression"):
             self.ui.output_classes.setHidden(True)
             self.ui.output_classes_label.setHidden(True)
+            self.ui.load_classes.setHidden(True)
         else:
             self.ui.output_classes_label.setHidden(False)
             self.ui.output_classes.setHidden(False)
+            self.ui.load_classes.setHidden(False)
 
     def load_preprocess_clicked(self):
         #checking if there already a preprocess file exists
