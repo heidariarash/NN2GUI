@@ -7,6 +7,7 @@ from utils_nn2gui        import size_utils, load_input_utils
 import sys
 import os
 import importlib.util
+import json
 import torch
 import tensorflow as tf
 import pandas     as pd
@@ -135,6 +136,7 @@ class MainWindow(QMainWindow):
         self.ui.load_model.clicked.connect(self.load_model_clicked)
         self.ui.load_input.clicked.connect(self.load_input_clicked)
         self.ui.enter_input.clicked.connect(self.enter_input_clicked)
+        self.ui.load_classes.clicked.connect(self.load_classes_clicked)
 
     def output_type_changed(self, value):
         #hiding the output classes if the output type is regression.
@@ -364,6 +366,27 @@ class MainWindow(QMainWindow):
                     self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": " + self.classes[np.argmax(pred)] + "\nwith probability of  " + str(np.max(pred)) + "\n")
                 except:
                     self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": Class " + str(np.argmax(pred)) + "\nwith probability of  " + str(np.max(pred)) + + "\n")
+
+    def load_classes_clicked(self):
+        options     = QFileDialog.Options()
+        fileName, _ = QFileDialog.getOpenFileName(self,"Choose The Classes File","","JSON (*.json);;All Files (*)", options=options)
+        if fileName:
+            try:
+                with open(fileName) as f:
+                    json_file = json.load(f)
+                    if not isinstance(json_file["classes"], list):
+                        self.ui.load_classes_error.setHidden(False)
+                        self.ui.load_classes_error.setText("* classes should be a list.")
+                        return
+                    if len(json_file["classes"]) < 1:
+                        self.ui.load_classes_error.setHidden(False)
+                        self.ui.load_classes_error.setText("* There should be at least two classes.")
+                        return
+                    self.classes = json_file["classes"]
+                    self.ui.load_classes_error.setHidden(True)
+            except:
+                self.ui.load_classes_error.setHidden(False)
+                self.ui.load_classes_error.setText("* Something went wrong.")
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

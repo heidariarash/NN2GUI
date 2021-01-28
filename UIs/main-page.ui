@@ -955,9 +955,9 @@ QPushButton:disabled {
    <widget class="QLabel" name="load_classes_error">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>240</y>
-      <width>181</width>
+      <x>35</x>
+      <y>250</y>
+      <width>380</width>
       <height>20</height>
      </rect>
     </property>
