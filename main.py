@@ -313,9 +313,9 @@ class MainWindow(QMainWindow):
         elif output_type == "Classification":
             for index, pred in enumerate(prediction):
                 try:
-                    self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": " + self.classes[np.argmax(pred)] + "\n")
+                    self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": " + self.classes[np.argmax(pred)] + "\nwith probability of  " + str(np.max(pred)) + "\n")
                 except:
-                    self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": Class " + str(np.argmax(pred)) + "\n")
+                    self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": Class " + str(np.argmax(pred)) + "\nwith probability of  " + str(np.max(pred)) + "\n")
 
     def enter_input_clicked(self):
         input_type = self.ui.input_type.currentText()
@@ -358,9 +358,9 @@ class MainWindow(QMainWindow):
         elif output_type == "Classification":
             for index, pred in enumerate(prediction):
                 try:
-                    self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": " + self.classes[np.argmax(pred)] + "\n")
+                    self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": " + self.classes[np.argmax(pred)] + "\nwith probability of  " + str(np.max(pred)) + "\n")
                 except:
-                    self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": Class " + str(np.argmax(pred)) + "\n")
+                    self.ui.predictions.setText(self.ui.predictions.text() + "Output for instance " + str(index) + ": Class " + str(np.argmax(pred)) + "\nwith probability of  " + str(np.max(pred)) + + "\n")
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
