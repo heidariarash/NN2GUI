@@ -517,7 +517,7 @@ class Ui_NN2GUI(object):
 "}")
         self.load_classes.setObjectName("load_classes")
         self.load_classes_error = QtWidgets.QLabel(self.centralwidget)
-        self.load_classes_error.setGeometry(QtCore.QRect(240, 240, 181, 20))
+        self.load_classes_error.setGeometry(QtCore.QRect(35, 250, 380, 20))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
