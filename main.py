@@ -391,7 +391,7 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     app.setStyle("fusion")
-    app.setWindowIcon(QtGui.QIcon('gallery/icon.jpg'))
+    app.setWindowIcon(QtGui.QIcon('gallery/icon.png'))
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
