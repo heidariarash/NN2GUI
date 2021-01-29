@@ -1,0 +1,17 @@
+<svg width="180" height="180" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="182" width="182" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <text opacity="0.5" stroke="#000" transform="matrix(2.1258795261383057,0,0,2.066666603088379,-409.82014751434326,-126.93332576751709) " font-style="normal" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="'Playball'" font-size="50" id="svg_7" y="106.19355" x="194.65832" stroke-width="0" fill="#ba181b">NN</text>
+  <text stroke="#000" transform="matrix(1.541871905326843,0,0,1.79365074634552,-249.0344752669334,-300.444426894188) " xml:space="preserve" text-anchor="start" font-family="'Playball'" font-size="50" id="svg_9" y="261.77876" x="166.00215" stroke-width="0" fill="#7f0000">GUI</text>
+  <text stroke="#000" transform="matrix(2.1258795261383057,0,0,2.066666603088379,-409.82014751434326,-126.93332576751709) " font-style="normal" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="'Playball'" font-size="50" id="svg_6" y="106.19355" x="193.71754" stroke-width="0" fill="#7f0000">NN</text>
+  <text opacity="0.5" stroke="#000" transform="matrix(4.096774101257324,0,0,2.7702243599185294,-569.8064346313477,-332.569419190449) " xml:space="preserve" text-anchor="start" font-family="'Playball'" font-size="50" id="svg_10" y="172.44026" x="143.9685" stroke-width="0" fill="#000000">2</text>
+ </g>
+</svg>
