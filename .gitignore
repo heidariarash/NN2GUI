@@ -1,5 +1,5 @@
 __pycache__
 test*
 build
-main.spec
+*.spec
 dist
